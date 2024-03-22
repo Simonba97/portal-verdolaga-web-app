@@ -1,4 +1,4 @@
-import { IFixtureItem } from "../../models/IFixtureItem";
+import { IApiFootballResponse } from "../../models/IFixtureItem";
 import { isApiEnabled } from '../../../config/apiConfig';
 import dataTest from '../../mockData/dataTest.json';
 
@@ -39,7 +39,7 @@ export abstract class ApiFootballService {
      * @returns {Promise<string>}
      * @memberof ApiFootballService
      */
-    public async makeRequest(endpoint: string): Promise<IFixtureItem | null> {
+    public async makeRequest(endpoint: string): Promise<IApiFootballResponse | null> {
         try {
 
             //Restringir las consultas al API si no están habilitadas

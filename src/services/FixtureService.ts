@@ -1,4 +1,4 @@
-import { IFixtureItem, IFixtureResponse } from "../models/IFixtureItem";
+import { IApiFootballResponse, IFixtureResponse } from "../models/IFixtureItem";
 import { ApiFootballService } from "./core/ApiFootballService";
 
 /**
@@ -34,7 +34,7 @@ export class FixtureService extends ApiFootballService {
     public async getPreviousMatch(teamId: number): Promise<IFixtureResponse | undefined> {
         try {
             const endpoint = `fixtures?team=${teamId}&last=1`;
-            const data: IFixtureItem | null = await this.makeRequest(endpoint);
+            const data: any = await this.makeRequest(endpoint);
 
             return data?.response?.[0] || undefined;
         } catch (error) {

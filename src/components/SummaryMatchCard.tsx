@@ -6,7 +6,6 @@ import { format } from "date-fns";
 import { es } from 'date-fns/locale'; // Importa el módulo 'es'
 
 const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
-    console.log(matchData);
     return (
         <motion.div className='w-[85%] py-2 ml-9 bg-[url("../src/assets/bgTexture.jpg")] bg-center bg-cover flex flex-row text-center items-center m-auto' {...fadeInAnimation}>
             <div className='w-[60px] text-center bg-green-500 -ml-8'>

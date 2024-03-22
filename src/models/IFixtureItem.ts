@@ -2,6 +2,7 @@ import { IGoals } from "./IGoals";
 import { ILeague } from "./ILeague";
 import { IPeriods } from "./IPeriods";
 import { IScore } from "./IScore";
+import { ITeam } from "./ITeam";
 import { ITeams } from "./ITeams";
 import { IVenue } from "./IVenue";
 
@@ -23,6 +24,11 @@ export interface IFixtureResponse {
   score: IScore;
 } // end IFixtureResponse
 
+export interface ITeamsInformationResponse {
+  team: ITeam;
+  venue: IVenue;
+} // end ITeamsInformationResponse
+
 export interface IFixture {
   id: number;
   referee: string | null;
@@ -41,13 +47,11 @@ export interface IStatus {
   elapsed: number | null;
 } // end IStatus
 
-
-
-export interface IFixtureItem {
+export interface IApiFootballResponse {
   get?: string;
   parameters?: IParameters;
   errors?: any[];
   results?: number;
   paging?: IPaging;
-  response?: IFixtureResponse[];
-} // end IFixtureItem
+  response?: IFixtureResponse[] | ITeamsInformationResponse[];
+} // end IApiFootballResponse
