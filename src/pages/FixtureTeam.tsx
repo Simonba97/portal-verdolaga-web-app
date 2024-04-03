@@ -5,6 +5,7 @@ import MessageCard from "../components/MessageCard";
 import SummaryMatchCard from "../components/SummaryMatchCard";
 import TeamDetail from "../components/TeamDetail";
 import { TeamsService } from "../services/TeamsService";
+import { useLocation } from "react-router-dom";
 
 let hasFetchedData: boolean = false;
 
@@ -18,16 +19,22 @@ const FixtureTeam = () => {
     const fixtureService = new FixtureService();
     const teamsService = new TeamsService();
 
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const teamId = queryParams.get('teamId');
+    // Usar un valor predeterminado si teamId es falsy o undefined
+    const normalizedTeamId: number = Number(teamId) || 1137;
+
     useEffect(() => {
         const callAsync = async () => {
             try {
                 setLoading(true);
-                const fixtureData: IFixtureResponse[] | undefined = await fixtureService.getFixture(1137);
+                const fixtureData: IFixtureResponse[] | undefined = await fixtureService.getFixture(normalizedTeamId);
                 // Ordenar la información de respuesta con respecto a la fecha
                 fixtureData?.sort((a, b) => new Date(a.fixture.date).getTime() - new Date(b.fixture.date).getTime());
                 setFixtureTeamData(fixtureData);
 
-                const teamInformationData: ITeamsInformationResponse | undefined = await teamsService.getTeamInformation(1137);
+                const teamInformationData: ITeamsInformationResponse | undefined = await teamsService.getTeamInformation(normalizedTeamId);
                 setTeamInformationData(teamInformationData);
 
                 setLoading(false);

@@ -4,6 +4,7 @@ import { IFixtureResponse } from '../models/IFixtureItem';
 import { motion } from 'framer-motion';
 import MessageCard from './MessageCard';
 import { fadeInAnimation } from '../utils/animationConstants';
+import { Link } from 'react-router-dom';
 
 const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureResponse | undefined, isLoading: boolean, error: any }) => {
 
@@ -64,9 +65,9 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
                 </div>
                 <div className='mb-5'>
                     {/* BODY */}
-                    <div className='mb-2' >
+                    <Link className='mb-2' to={`/fixture-team?teamId=${matchData.teams.home.id}`}>
                         <img src={matchData.teams.home.logo} alt={matchData.teams.home.name} className='w-20 m-auto' />
-                    </div>
+                    </Link>
                     <div className='text-2xl space-y-[-8px] italic'>
                         <div >
                             <p>
@@ -90,9 +91,9 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
                             </p>
                         </div>
                     </div>
-                    <div className='mt-2' >
+                    <Link className='mt-2' to={`/fixture-team?teamId=${matchData.teams.away.id}`}>
                         <img src={matchData.teams.away.logo} alt={matchData.teams.away.name} className='w-20 m-auto' />
-                    </div>
+                    </Link>
                 </div>
                 <div className='bg-green-500 w-full text-xs font-light py-1 tracking-widest'>www.portalverdolaga.com</div>
             </div>

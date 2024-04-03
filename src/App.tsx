@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PreviousMatch from "./pages/PreviousMatch";
 import Navbar from "./components/common/Navbar";
 import FixtureTeam from "./pages/FixtureTeam";
+import MatchDetail from "./pages/MatchDetail";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/next-match" element={<NextMatch />} />
         <Route path="/previous-match" element={<PreviousMatch />} />
         <Route path="/fixture-team" element={<FixtureTeam />} />
+        <Route path="/detail-match" element={<MatchDetail />} />
       </Routes>
 
       {/* FooterNextGame siempre visible en todas las rutas */}

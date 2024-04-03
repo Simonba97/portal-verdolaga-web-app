@@ -4,10 +4,11 @@ import { IFixtureResponse } from "../models/IFixtureItem";
 
 import { format } from "date-fns";
 import { es } from 'date-fns/locale'; // Importa el módulo 'es'
+import { Link } from "react-router-dom";
 
 const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
     return (
-        <motion.div className='w-[85%] py-2 ml-9 bg-[url("../src/assets/bgTexture.jpg")] bg-center bg-cover flex flex-row text-center items-center m-auto' {...fadeInAnimation}>
+        <div className='w-[85%] py-2 ml-9 bg-[url("../src/assets/bgTexture.jpg")] bg-center bg-cover flex flex-row text-center items-center m-auto' >
             <div className='w-[60px] text-center bg-green-500 -ml-8'>
                 <div>
                     <p className='text-xl font-extralight'>
@@ -21,7 +22,7 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
                 </div>
             </div>
 
-            <div className='m-auto'>
+            <Link className='w-full h-full m-auto cursor-pointer' to={`/detail-match?matchId=${matchData.fixture.id}`}>
                 {/* BODY */}
                 <div>
                     <div className="space-y-[-9px] mb-1">
@@ -43,10 +44,9 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Link>
             {/* <div className='bg-green-400 w-full text-xs font-light py-1 tracking-widest'>www.portalverdolaga.com</div> */}
-        </motion.div>
-
+        </div>
     )
 }
 

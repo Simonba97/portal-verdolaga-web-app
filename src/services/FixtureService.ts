@@ -1,4 +1,4 @@
-import { IApiFootballResponse, IFixtureResponse } from "../models/IFixtureItem";
+import { IFixtureResponse } from "../models/IFixtureItem";
 import { ApiFootballService } from "./core/ApiFootballService";
 
 /**
@@ -12,7 +12,7 @@ import { ApiFootballService } from "./core/ApiFootballService";
 export class FixtureService extends ApiFootballService {
 
     /**
-     * Obtiene la información de un partido desde un archivo.
+     * Obtiene la información del próximo partido de un equipo
      * @returns {Promise<IInfoMatchItem>} - Una promesa que se resuelve con la información del partido.
      */
     public async getNextMatch(teamId: number): Promise<IFixtureResponse | undefined> {
@@ -28,7 +28,7 @@ export class FixtureService extends ApiFootballService {
     } // end getNextMatch
 
     /**
-     * Obtiene la información de un partido desde un archivo.
+     * Obtiene la información del último partido de un equipo
      * @returns {Promise<IInfoMatchItem>} - Una promesa que se resuelve con la información del partido.
      */
     public async getPreviousMatch(teamId: number): Promise<IFixtureResponse | undefined> {
@@ -44,7 +44,7 @@ export class FixtureService extends ApiFootballService {
     } // end getPreviousMatch
 
     /**
-     * Obtiene la información de un partido desde un archivo.
+     * Obtiene la información de todos los partidos de un equipo
      * @returns {Promise<IInfoMatchItem>} - Una promesa que se resuelve con la información del partido.
      */
     public async getFixture(teamId: number): Promise<IFixtureResponse[] | undefined> {
@@ -59,4 +59,19 @@ export class FixtureService extends ApiFootballService {
         }
     } // end getFixture
 
+    /**
+     * Obtiene la información de un partido por ID del Fixture
+     * @returns {Promise<IInfoMatchItem>} - Una promesa que se resuelve con la información del partido.
+     */
+    public async getFixtureByMatchId(matchId: number): Promise<IFixtureResponse | undefined> {
+        try {
+            const endpoint = `fixtures?id=${matchId}`;
+            const data: any = await this.makeRequest(endpoint);
+
+            return data?.response?.[0] || undefined;
+        } catch (error) {
+            console.error(`Error fetching fixture for fixtureId ${matchId}:`, error);
+            return undefined;
+        }
+    } // end getFixtureByMatchId
 }
