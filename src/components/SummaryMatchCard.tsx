@@ -24,14 +24,11 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
             <div className='m-auto'>
                 {/* BODY */}
                 <div>
-                    {/*  <div className="space-y-[-9px] m-1 tracking-wider">
-                        <p className='text-sm font-light not-italic'>
-                            <span>{`${matchData.league.round}`}</span>
-                        </p>
+                    <div className="space-y-[-9px] mb-1">
                         <p className='text-sm font-light not-italic'>
                             <span>{`${matchData.league.name} - ${matchData.league.season}`}</span>
                         </p>
-                    </div> */}
+                    </div>
                     <div className="flex items-center">
                         <div className="flex items-center mr-2 space-x-1">
                             <span className={`w-16 text-sm text-right leading-[16px] ${matchData.teams.home.id === 1137 ? 'font-normal' : 'font-extralight'}`}>{matchData.teams.home.name}</span>

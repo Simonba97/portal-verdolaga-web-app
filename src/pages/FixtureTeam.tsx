@@ -22,8 +22,9 @@ const FixtureTeam = () => {
         const callAsync = async () => {
             try {
                 setLoading(true);
-                //TODO: Ordenar la información de respuesta con respecto a la fecha
                 const fixtureData: IFixtureResponse[] | undefined = await fixtureService.getFixture(1137);
+                // Ordenar la información de respuesta con respecto a la fecha
+                fixtureData?.sort((a, b) => new Date(a.fixture.date).getTime() - new Date(b.fixture.date).getTime());
                 setFixtureTeamData(fixtureData);
 
                 const teamInformationData: ITeamsInformationResponse | undefined = await teamsService.getTeamInformation(1137);
@@ -60,11 +61,10 @@ const FixtureTeam = () => {
     return (
         <section className="h-screen bg-[url('../src/assets/bgHome.jpg')] bg-center bg-cover">
             <div className='h-full flex justify-center items-center overflow-auto'>
-                {/* Cover de imágen */}
-                {TeamInformationData &&
-                    <TeamDetail teamData={TeamInformationData} />
-                }
                 <div className='w-[90%] h-full pt-10 sm:w-[415px] md:w-[415px] lg:w-w-[415px] xl:w-w-[415px] 2xl:w-[415px] uppercase justify-center space-y-5'>
+                    {TeamInformationData &&
+                        <TeamDetail teamData={TeamInformationData} />
+                    }
                     {
                         FixtureTeamData.map((game) => <SummaryMatchCard matchData={game} />)
                     }

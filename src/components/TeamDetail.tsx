@@ -1,8 +1,34 @@
 import { ITeamsInformationResponse } from '../models/IFixtureItem';
+import { motion } from 'framer-motion';
+import { fadeInAnimation } from '../utils/animationConstants';
+import { format } from 'date-fns';
 
 const TeamDetail = ({ teamData }: { teamData: ITeamsInformationResponse }) => {
     return (
-        <div>{teamData.team.name}</div>
+        <motion.div className='w-full mb-5 flex justify-center' {...fadeInAnimation}>
+            <div className='w-[60%]'>
+                <div className='max-w-fit text-center m-auto bg-green-500 px-3 py-1 relative top-4'>
+                    <div>
+                        <p className='text-lg font-normal text-white'>
+                            <span>CALENDARIO</span>
+                        </p>
+                    </div>
+                </div>
+                <div className='bg-[url("../src/assets/bgTexture.jpg")] bg-center bg-cover flex flex-col text-center items-center'>
+                    <div className='pt-1 mb-2 font-light z-10'>
+                        <div>
+                            <p className='text-xl font-normal italic'>
+                                <span>{teamData.team.name}</span>
+                            </p>
+                        </div>
+                        <div>
+                            <img src={teamData.team.logo} alt={teamData.team.name} className='w-14 m-auto' />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </motion.div>
     )
 }
 
