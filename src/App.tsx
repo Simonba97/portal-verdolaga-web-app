@@ -3,15 +3,15 @@ import HeroSection from "./components/HeroSection";
 import NextMatch from "./pages/NextMatch";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PreviousMatch from "./pages/PreviousMatch";
-import Navbar from "./components/common/Navbar";
 import FixtureTeam from "./pages/FixtureTeam";
 import MatchDetail from "./pages/MatchDetail";
+import Sidebar from "./components/common/SideBar";
 
 const App = () => {
   return (
     <Router>
       {/* FooterNextGame siempre visible en todas las rutas */}
-      {/* <Navbar /> */}
+      <Sidebar />
 
       <Routes>
         {/* Ruta para la página principal */}

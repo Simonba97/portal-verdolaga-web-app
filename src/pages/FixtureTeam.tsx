@@ -11,6 +11,7 @@ let hasFetchedData: boolean = false;
 
 const FixtureTeam = () => {
 
+    let componentResult = null;
     const [FixtureTeamData, setFixtureTeamData] = useState<IFixtureResponse[] | undefined>(undefined);
     const [TeamInformationData, setTeamInformationData] = useState<ITeamsInformationResponse | undefined>(undefined);
     const [error, setError] = useState<string | null>(null); // Estado para manejar errores
@@ -54,27 +55,25 @@ const FixtureTeam = () => {
     }, []);
 
     if (loading) {
-        return (
-            <MessageCard titleMsj='Cargando información...' descMsj='Por favor espere...' isLoading={true} />
-        );
-    }
+        componentResult = <MessageCard titleMsj='Cargando información...' descMsj='Por favor espere...' isLoading={loading} />
+    } else if (!FixtureTeamData || error) {
+        componentResult = <MessageCard titleMsj='Sin información disponble' descMsj='Por favor vuelva a intentarlo más tarde' />
+    } else
 
-    if (!FixtureTeamData || error) {
-        return (
-            <MessageCard titleMsj='Sin información disponble' descMsj='Por favor vuelva a intentarlo más tarde' />
-        );
-    }
+        if (TeamInformationData && FixtureTeamData) {
+            componentResult = <>
+                <TeamDetail teamData={TeamInformationData} />
+                {
+                    FixtureTeamData?.map((game) => <SummaryMatchCard matchData={game} />)
+                }
+            </>
+        }
 
     return (
         <section className="h-screen bg-[url('../src/assets/bgHome.jpg')] bg-center bg-cover">
             <div className='h-full flex justify-center items-center overflow-auto'>
                 <div className='w-[90%] h-full pt-10 sm:w-[415px] md:w-[415px] lg:w-w-[415px] xl:w-w-[415px] 2xl:w-[415px] uppercase justify-center space-y-5'>
-                    {TeamInformationData &&
-                        <TeamDetail teamData={TeamInformationData} />
-                    }
-                    {
-                        FixtureTeamData.map((game) => <SummaryMatchCard matchData={game} />)
-                    }
+                    {componentResult}
                 </div>
             </div>
         </section>
