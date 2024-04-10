@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { IFixtureResponse } from '../models/IFixtureItem';
+import { IFixtureResponse } from '../models/IFixturesItem';
 import { FixtureService } from '../services/FixtureService';
 import FullMatchCard from '../components/FullMatchCard';
+import { Global } from '../utils/Global';
 
 let hasFetchedData: boolean = false;
 
@@ -17,7 +18,7 @@ const NextMatch = () => {
         const callAsync = async () => {
             try {
                 setIsLoading(true);
-                const dataResponse: IFixtureResponse | undefined = await fixtureService.getNextMatch(1137);
+                const dataResponse: IFixtureResponse | undefined = await fixtureService.getNextMatch(Global.NACIONAL_ID_API_FOOTBALL);
                 setNextMatchData(dataResponse);
                 setIsLoading(false);
                 hasFetchedData = !hasFetchedData;

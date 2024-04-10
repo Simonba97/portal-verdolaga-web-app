@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { IFixtureResponse } from '../models/IFixtureItem';
+import { IFixtureResponse, IFixturesStatisticsResponse } from '../models/IFixturesItem';
 import { FixtureService } from '../services/FixtureService';
 import FullMatchCard from '../components/FullMatchCard';
 import { useLocation } from 'react-router-dom';
@@ -9,6 +9,7 @@ let hasFetchedData: boolean = false;
 const MatchDetail = () => {
 
     const [matchData, setMatchData] = useState<IFixtureResponse | undefined>(undefined);
+    const [fixturesStatistics, setFixturesStatistics] = useState<IFixturesStatisticsResponse[] | undefined>(undefined);
     const [error, setError] = useState<string | null>(null); // Estado para manejar errores
     const [isLoading, setIsLoading] = useState(true); // Estado para indicar si la solicitud está en curso
 
@@ -23,6 +24,9 @@ const MatchDetail = () => {
             try {
                 setIsLoading(true);
                 const dataResponse: IFixtureResponse | undefined = await fixtureService.getFixtureByMatchId(matchId);
+                const fixturesStatisticsResponse: IFixturesStatisticsResponse[] | undefined = await fixtureService.getFixturesStatisticsByMatchId(matchId);
+                debugger;
+                setFixturesStatistics(fixturesStatisticsResponse);
                 setMatchData(dataResponse);
                 setIsLoading(false);
                 hasFetchedData = !hasFetchedData;

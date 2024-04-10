@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { fadeInAnimation } from "../utils/animationConstants";
-import { IFixtureResponse } from "../models/IFixtureItem";
+import { IFixtureResponse } from "../models/IFixturesItem";
 
 import { format } from "date-fns";
 import { es } from 'date-fns/locale'; // Importa el módulo 'es'
 import { Link } from "react-router-dom";
+import { Global } from "../utils/Global";
 
 const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
     return (
@@ -32,7 +33,7 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
                     </div>
                     <div className="flex items-center">
                         <div className="flex items-center mr-2 space-x-1">
-                            <span className={`w-16 text-sm text-right leading-[16px] ${matchData.teams.home.id === 1137 ? 'font-normal' : 'font-extralight'}`}>{matchData.teams.home.name}</span>
+                            <span className={`w-16 text-sm text-right leading-[16px] ${matchData.teams.home.id === Global.NACIONAL_ID_API_FOOTBALL ? 'font-normal' : 'font-extralight'}`}>{matchData.teams.home.name}</span>
                             <img src={matchData.teams.home.logo} alt={matchData.teams.home.name} className='h-8' />
                         </div>
                         <span className='text-base font-light not-italic'>
@@ -40,7 +41,7 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
                         </span>
                         <div className="flex items-center ml-2 space-x-1">
                             <img src={matchData.teams.away.logo} alt={matchData.teams.away.name} className='h-8' />
-                            <span className={`w-16 text-sm text-left leading-[16px] ${matchData.teams.away.id === 1137 ? 'font-normal' : 'font-extralight'} `}>{matchData.teams.away.name}</span>
+                            <span className={`w-16 text-sm text-left leading-[16px] ${matchData.teams.away.id === Global.NACIONAL_ID_API_FOOTBALL ? 'font-normal' : 'font-extralight'} `}>{matchData.teams.away.name}</span>
                         </div>
                     </div>
                 </div>

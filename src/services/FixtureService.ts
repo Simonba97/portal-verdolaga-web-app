@@ -1,4 +1,4 @@
-import { IFixtureResponse } from "../models/IFixtureItem";
+import { IFixtureResponse, IFixturesStatisticsResponse } from "../models/IFixturesItem";
 import { ApiFootballService } from "./core/ApiFootballService";
 
 /**
@@ -74,4 +74,20 @@ export class FixtureService extends ApiFootballService {
             return undefined;
         }
     } // end getFixtureByMatchId
+
+    /**
+     * Obtiene la información de las estadisticas de un partido por ID del Fixture
+     * @returns {Promise<IInfoMatchItem>} - Una promesa que se resuelve con la información del partido.
+     */
+    public async getFixturesStatisticsByMatchId(matchId: number): Promise<IFixturesStatisticsResponse[] | undefined> {
+        try {
+            const endpoint = `fixtures/statistics?fixture=${matchId}`;
+            const data: any = await this.makeRequest(endpoint);
+
+            return data?.response || undefined;
+        } catch (error) {
+            console.error(`Error fetching fixtures statistics for fixtureId ${matchId}:`, error);
+            return undefined;
+        }
+    } // end getFixturesStatisticsByMatchId
 }

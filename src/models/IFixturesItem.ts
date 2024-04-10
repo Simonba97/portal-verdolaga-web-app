@@ -24,6 +24,11 @@ export interface IFixtureResponse {
   score: IScore;
 } // end IFixtureResponse
 
+export interface IFixturesStatisticsResponse {
+  statistics: IStatistics[];
+  team: ITeam;
+} // end IFixturesStatisticsResponse
+
 export interface ITeamsInformationResponse {
   team: ITeam;
   venue: IVenue;
@@ -39,6 +44,11 @@ export interface IFixture {
   venue: IVenue;
   status: IStatus;
 } // end IFixture
+
+export interface IStatistics {
+  type: string;
+  value: number | null;
+} // end IStatistics
 
 
 export interface IStatus {

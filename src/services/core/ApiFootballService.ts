@@ -1,4 +1,4 @@
-import { IApiFootballResponse } from "../../models/IFixtureItem";
+import { IApiFootballResponse } from "../../models/IFixturesItem";
 import { isApiEnabled } from '../../../config/apiConfig';
 import dataTest from '../../mockData/dataTest.json';
 

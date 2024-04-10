@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale'; // Importa el módulo 'es'
-import { IFixtureResponse } from '../models/IFixtureItem';
+import { IFixtureResponse } from '../models/IFixturesItem';
 import { motion } from 'framer-motion';
 import MessageCard from './MessageCard';
 import { fadeInAnimation } from '../utils/animationConstants';

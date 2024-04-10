@@ -1,4 +1,4 @@
-import { ITeamsInformationResponse } from "../models/IFixtureItem";
+import { ITeamsInformationResponse } from "../models/IFixturesItem";
 import { ApiFootballService } from "./core/ApiFootballService";
 
 /**

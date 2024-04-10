@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import CountdownTimer from '../CountdownTimer'
-import { IFixtureResponse } from '../../models/IFixtureItem';
+import { IFixtureResponse } from '../../models/IFixturesItem';
 import { useEffect, useState } from 'react';
 import { FixtureService } from '../../services/FixtureService';
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import { fadeInAnimation } from '../../utils/animationConstants';
+import { Global } from '../../utils/Global';
 
 let hasFetchedData: boolean = false;
 
@@ -20,7 +21,7 @@ const FooterNextGame = () => {
         const callAsync = async () => {
             try {
                 setLoading(true);
-                const dataResponse: IFixtureResponse | undefined = await fixtureService.getNextMatch(1137);
+                const dataResponse: IFixtureResponse | undefined = await fixtureService.getNextMatch(Global.NACIONAL_ID_API_FOOTBALL);
                 setNextMatchData(dataResponse);
                 setLoading(false);
                 hasFetchedData = !hasFetchedData;

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { FixtureService } from "../services/FixtureService";
-import { IFixtureResponse, ITeamsInformationResponse } from "../models/IFixtureItem";
+import { IFixtureResponse, ITeamsInformationResponse } from "../models/IFixturesItem";
 import MessageCard from "../components/MessageCard";
 import SummaryMatchCard from "../components/SummaryMatchCard";
 import TeamDetail from "../components/TeamDetail";
 import { TeamsService } from "../services/TeamsService";
 import { useLocation } from "react-router-dom";
+import { Global } from "../utils/Global";
 
 let hasFetchedData: boolean = false;
 
@@ -24,7 +25,7 @@ const FixtureTeam = () => {
     const queryParams = new URLSearchParams(location.search);
     const teamId = queryParams.get('teamId');
     // Usar un valor predeterminado si teamId es falsy o undefined
-    const normalizedTeamId: number = Number(teamId) || 1137;
+    const normalizedTeamId: number = Number(teamId) || Global.NACIONAL_ID_API_FOOTBALL;
 
     useEffect(() => {
         const callAsync = async () => {

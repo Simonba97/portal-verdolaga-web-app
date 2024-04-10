@@ -1,4 +1,4 @@
-import { ITeamsInformationResponse } from '../models/IFixtureItem';
+import { ITeamsInformationResponse } from '../models/IFixturesItem';
 import { motion } from 'framer-motion';
 import { fadeInAnimation } from '../utils/animationConstants';
 import { format } from 'date-fns';
