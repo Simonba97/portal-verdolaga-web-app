@@ -9,7 +9,7 @@ import { Global } from "../utils/Global";
 
 const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
     return (
-        <div className='w-[85%] py-2 ml-9 bg-[url("../src/assets/bgTexture.jpg")] bg-center bg-cover flex flex-row text-center items-center m-auto' >
+        <div className='w-[85%] py-2 ml-9 bg-[url("../src/assets/bgCardApp.jpg")] bg-center bg-cover flex flex-row text-center items-center m-auto' >
             <div className='w-[60px] text-center bg-green-500 -ml-8'>
                 <div>
                     <p className='text-xl font-extralight'>

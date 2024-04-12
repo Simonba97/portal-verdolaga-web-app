@@ -71,7 +71,7 @@ const FixtureTeam = () => {
         }
 
     return (
-        <section className="h-screen bg-[url('../src/assets/bgHome.jpg')] bg-center bg-cover">
+        <section className="h-screen">
             <div className='h-full flex justify-center items-center overflow-auto'>
                 <div className='w-[90%] h-full pt-10 sm:w-[415px] md:w-[415px] lg:w-w-[415px] xl:w-w-[415px] 2xl:w-[415px] uppercase justify-center space-y-5'>
                     {componentResult}

@@ -3,42 +3,42 @@ import { fadeInAnimation } from "../../utils/animationConstants";
 import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
-    const [isOpen, setIsOpen] = useState(false); // Estado para controlar si el Sidebar está abierto o cerrado
+const SideBar = () => {
+    const [isOpen, setIsOpen] = useState(false); // Estado para controlar si el SideBar está abierto o cerrado
 
-    // Función para alternar entre abrir y cerrar el Sidebar
-    const toggleSidebar = () => {
+    // Función para alternar entre abrir y cerrar el SideBar
+    const toggleSideBar = () => {
         setIsOpen(!isOpen);
     };
 
-    const closeSidebar = () => {
+    const closeSideBar = () => {
         setIsOpen(false);
     };
 
     return (
         <>
-            <motion.button className="bg-green-400 fixed p-3 mt-5 ml-5 fill-white" onClick={toggleSidebar} {...fadeInAnimation}>
+            <motion.button className="bg-green-400 fixed p-3 mt-5 ml-5 fill-white" onClick={toggleSideBar} {...fadeInAnimation}>
                 <svg className="w-6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
                     <path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"></path>
                 </svg>
             </motion.button>
             <div className={`fixed inset-y-0 left-0 w-64 bg-gray-100 p-4 transition-all duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-50`}>
                 <div className="flex justify-end">
-                    <button className="bg-green-400 p-3 fill-white" onClick={toggleSidebar}>
+                    <button className="bg-green-400 p-3 fill-white" onClick={toggleSideBar}>
                         <svg className="w-6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
                             <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
                         </svg>
                     </button>
                 </div>
                 <ul className="uppercase text-gray-600 text-2xl tracking-widest">
-                    <li className="py-2" onClick={closeSidebar}><Link to={'/'}>Inicio</Link></li>
-                    <li className="py-2" onClick={closeSidebar}><Link to={'/next-match'}>Próximo Partido</Link></li>
-                    <li className="py-2" onClick={closeSidebar}><Link to={'/previous-match'}>Último Partido</Link></li>
-                    <li className="py-2" onClick={closeSidebar}><Link to={'/fixture-team'}>Calendario</Link></li>
+                    <li className="py-2" onClick={closeSideBar}><Link to={'/'}>Inicio</Link></li>
+                    <li className="py-2" onClick={closeSideBar}><Link to={'/next-match'}>Próximo Partido</Link></li>
+                    <li className="py-2" onClick={closeSideBar}><Link to={'/previous-match'}>Último Partido</Link></li>
+                    <li className="py-2" onClick={closeSideBar}><Link to={'/fixture-team'}>Calendario</Link></li>
                     {/* Agrega más elementos del menú según sea necesario */}
                 </ul>
 
-                {/* Footer Sidebar */}
+                {/* Footer SideBar */}
                 <div className="w-[85%] fixed bottom-0 mb-4">
                     <hr className='w-56 m-auto border-gray-300 mt-2' />
                     {/* Redes Sociales */}
@@ -74,4 +74,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar
+export default SideBar

@@ -5,13 +5,18 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PreviousMatch from "./pages/PreviousMatch";
 import FixtureTeam from "./pages/FixtureTeam";
 import MatchDetail from "./pages/MatchDetail";
-import Sidebar from "./components/common/SideBar";
+import bgApp from '../src/assets/bgApp.jpg';
+import SideBar from "./components/common/SideBar";
 
 const App = () => {
   return (
+
     <Router>
+      {/* Cover */}
+      <div className="fixed -z-50 h-full w-full bg-cover" style={{ backgroundImage: `url(${bgApp})` }}>
+      </div>
       {/* FooterNextGame siempre visible en todas las rutas */}
-      <Sidebar />
+      <SideBar />
 
       <Routes>
         {/* Ruta para la página principal */}

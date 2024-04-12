@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import MessageCard from './MessageCard';
 import { fadeInAnimation } from '../utils/animationConstants';
 import { Link } from 'react-router-dom';
+import bgCardApp from '../../src/assets/bgCardApp.jpg'
 
 const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureResponse | undefined, isLoading: boolean, error: any }) => {
 
@@ -36,7 +37,7 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
                     </p>
                 </div>
             </div>
-            <div className='bg-[url("../src/assets/bgTexture.jpg")] bg-center bg-cover flex flex-col text-center items-center'>
+            <div className='bg-center bg-cover flex flex-col text-center items-center' style={{ backgroundImage: `url(${bgCardApp})` }}>
                 <div className='pt-9 space-y-[-5px] mb-5 font-light'>
                     {/* HEADER */}
                     {matchIsFinished ?
@@ -73,7 +74,7 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
                             <p>
                                 <span>{matchData.teams.home.name}</span>
                                 {matchIsFinished &&
-                                    <span className='bg-white not-italic px-2 ml-2'>{matchData.goals.home}</span>
+                                    <span className='bg-green-500 text-gray-50 not-italic px-2 ml-2'>{matchData.goals.home}</span>
                                 }
                             </p>
                         </div>
@@ -86,7 +87,7 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
                             <p>
                                 <span>{matchData.teams.away.name}</span>
                                 {matchIsFinished &&
-                                    <span className='bg-white not-italic px-2 ml-2'>{matchData.goals.away}</span>
+                                    <span className='bg-green-500 text-gray-50 not-italic px-2 ml-2'>{matchData.goals.away}</span>
                                 }
                             </p>
                         </div>

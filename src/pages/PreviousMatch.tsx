@@ -43,9 +43,7 @@ const PreviousMatch = () => {
     }, []);
 
     return (
-        <section className="h-screen bg-[url('../src/assets/bgHome.jpg')] bg-center bg-cover">
-
-            {/* Cover de imágen */}
+        <section className="h-screen">
             <div className='h-full flex justify-center items-center'>
                 <div className='w-[90%] sm:w-[415px] md:w-[415px] lg:w-w-[415px] xl:w-w-[415px] 2xl:w-[415px] uppercase flex justify-center'>
                     <FullMatchCard matchData={matchData} isLoading={isloading} error={error} />

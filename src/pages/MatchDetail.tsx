@@ -49,14 +49,18 @@ const MatchDetail = () => {
     }, []);
 
     return (
-        <section className="h-screen flex justify-center bg-[url('../src/assets/bgHome.jpg')] bg-center bg-cover">
-            <div className='h-[90vh] items-center overflow-auto'>
+        <div id='matchDetailContainer'>
+            <section className="flex justify-center">
                 <div className='w-[90%] sm:w-[415px] md:w-[415px] lg:w-w-[415px] xl:w-w-[415px] 2xl:w-[415px] uppercase'>
                     <FullMatchCard matchData={matchData} isLoading={isLoading} error={error} />
+                </div>
+            </section>
+            <section className="flex justify-center">
+                <div className='w-[90%] sm:w-[415px] md:w-[415px] lg:w-w-[415px] xl:w-w-[415px] 2xl:w-[415px] uppercase'>
                     <FullStats matchStats={fixturesStatistics} isLoading={isLoading} error={error} />
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     )
 }
 

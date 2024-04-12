@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 
 const HeroSection = () => {
     return (
-        <section className="h-screen flex items-center justify-center bg-[url('../src/assets/bgHome.jpg')] bg-center bg-cover">
+        <section className="h-screen flex items-center justify-center">
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className='w-4/5 sm:w-1/2 m-auto drop-shadow-[-3px_3px_6px_rgba(0,0,0,1)]'>
+                className='fixed w-4/5 sm:w-1/2 m-auto drop-shadow-[-3px_3px_6px_rgba(0,0,0,1)]'>
                 {/* Logos */}
                 <div className='flex justify-center py-4'>
                     <img src={logoPortalVerdolga} className='w-24 pr-2' />
