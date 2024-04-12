@@ -3,6 +3,7 @@ import { IFixtureResponse, IFixturesStatisticsResponse } from '../models/IFixtur
 import { FixtureService } from '../services/FixtureService';
 import FullMatchCard from '../components/FullMatchCard';
 import { useLocation } from 'react-router-dom';
+import FullStats from '../components/statistics/FullStats';
 
 let hasFetchedData: boolean = false;
 
@@ -23,17 +24,22 @@ const MatchDetail = () => {
         const callAsync = async () => {
             try {
                 setIsLoading(true);
-                const dataResponse: IFixtureResponse | undefined = await fixtureService.getFixtureByMatchId(matchId);
-                const fixturesStatisticsResponse: IFixturesStatisticsResponse[] | undefined = await fixtureService.getFixturesStatisticsByMatchId(matchId);
-                debugger;
-                setFixturesStatistics(fixturesStatisticsResponse);
+
+                const [dataResponse, fixturesStatisticsResponse] = await Promise.all([
+                    fixtureService.getFixtureByMatchId(matchId),
+                    fixtureService.getFixturesStatisticsByMatchId(matchId)
+                ]);
+
                 setMatchData(dataResponse);
-                setIsLoading(false);
+                setFixturesStatistics(fixturesStatisticsResponse);
+
                 hasFetchedData = !hasFetchedData;
             } catch (error: any) {
                 setError(error.message || 'Error desconocido');
+            } finally {
                 setIsLoading(false);
             }
+
         };
 
         if (!hasFetchedData) {
@@ -43,10 +49,11 @@ const MatchDetail = () => {
     }, []);
 
     return (
-        <section className="h-screen bg-[url('../src/assets/bgHome.jpg')] bg-center bg-cover">
-            <div className='h-full flex justify-center items-center'>
-                <div className='w-[90%] sm:w-[415px] md:w-[415px] lg:w-w-[415px] xl:w-w-[415px] 2xl:w-[415px] uppercase flex justify-center'>
+        <section className="h-screen flex justify-center bg-[url('../src/assets/bgHome.jpg')] bg-center bg-cover">
+            <div className='h-[90vh] items-center overflow-auto'>
+                <div className='w-[90%] sm:w-[415px] md:w-[415px] lg:w-w-[415px] xl:w-w-[415px] 2xl:w-[415px] uppercase'>
                     <FullMatchCard matchData={matchData} isLoading={isLoading} error={error} />
+                    <FullStats matchStats={fixturesStatistics} isLoading={isLoading} error={error} />
                 </div>
             </div>
         </section>

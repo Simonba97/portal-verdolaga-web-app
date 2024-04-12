@@ -23,7 +23,7 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
     const matchIsFinished: boolean = matchData.fixture.status.short == 'FT';
 
     return (
-        <motion.div className='w-full mb-14' {...fadeInAnimation}>
+        <motion.div className='w-full mb-3' {...fadeInAnimation}>
             <div className='w-[170px] text-center m-auto bg-green-500 px-4 py-2 relative top-9'>
                 <div>
                     <p className='text-4xl font-extralight'>

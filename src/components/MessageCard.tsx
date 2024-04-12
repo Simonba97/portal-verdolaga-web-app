@@ -4,7 +4,7 @@ import { fadeInAnimation } from "../utils/animationConstants";
 const MessageCard = ({ titleMsj, descMsj, isLoading }: { titleMsj: string, descMsj: string, isLoading?: boolean }) => {
 
     return (
-        <motion.div className='w-full bg-[url("../src/assets/bgTexture.jpg")] bg-center bg-cover flex flex-col text-center items-center' {...fadeInAnimation}>
+        <motion.div className='w-full bg-[url("../src/assets/bgTexture.jpg")] bg-center bg-cover flex flex-col text-center items-center mb-3' {...fadeInAnimation}>
             <div className='my-5'>
                 {isLoading &&
                     <div className='mb-2'>
