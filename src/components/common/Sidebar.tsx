@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { fadeInAnimation } from "../../utils/animationConstants";
-import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 import bgCardApp from '../../../src/assets/bgCardApp.jpg'
 
 const SideBar = () => {
