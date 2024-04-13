@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import { fadeInAnimation } from "../utils/animationConstants";
 import { IFixtureResponse } from "../models/IFixturesItem";
 
 import { format } from "date-fns";

@@ -1,4 +1,3 @@
-import React from 'react';
 import { IFixturesStatisticsResponse } from '../../models/IFixturesItem';
 import MessageCard from '../MessageCard';
 import { TypesStatistics, TypesStatisticsES } from '../../utils/TypesStatistics';

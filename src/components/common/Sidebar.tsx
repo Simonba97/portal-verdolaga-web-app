@@ -16,15 +16,6 @@ const SideBar = () => {
         setIsOpen(false);
     };
 
-    /* const optionsSideBar = [
-        {
-            key: '',
-            label: '',
-            router: '',
-            icon: ''
-        }
-    ] */
-
     return (
         <>
             {/* Menu open SideBar */}
