@@ -10,28 +10,33 @@ import SideBar from "./components/common/SideBar";
 
 const App = () => {
   return (
-
     <Router>
+
       {/* Cover */}
-      <div className="fixed -z-50 h-full w-full bg-cover" style={{ backgroundImage: `url(${bgApp})` }}>
-      </div>
-      {/* FooterNextGame siempre visible en todas las rutas */}
+      <div className="fixed -z-50 h-full w-full bg-cover" style={{ backgroundImage: `url(${bgApp})` }}></div>
+
+
+
+      {/* Renderiza el componente SideBar */}
       <SideBar />
+      {/* Agrega un espacio de margen inferior al contenido principal */}
+      <main className="pb-20">
+        {/* Rutas y componentes del contenido principal */}
+        <Routes>
+          {/* Ruta para la página principal */}
+          <Route path="/" element={<>
+            <HeroSection />
+          </>} />
 
-      <Routes>
-        {/* Ruta para la página principal */}
-        <Route path="/" element={<>
-          <HeroSection />
-        </>} />
+          {/* Ruta para la información del partido */}
+          <Route path="/next-match" element={<NextMatch />} />
+          <Route path="/previous-match" element={<PreviousMatch />} />
+          <Route path="/fixture-team" element={<FixtureTeam />} />
+          <Route path="/detail-match" element={<MatchDetail />} />
+        </Routes>
+      </main>
 
-        {/* Ruta para la información del partido */}
-        <Route path="/next-match" element={<NextMatch />} />
-        <Route path="/previous-match" element={<PreviousMatch />} />
-        <Route path="/fixture-team" element={<FixtureTeam />} />
-        <Route path="/detail-match" element={<MatchDetail />} />
-      </Routes>
-
-      {/* FooterNextGame siempre visible en todas las rutas */}
+      {/* Renderiza el componente FooterNextGame */}
       <FooterNextGame />
     </Router>
   )
