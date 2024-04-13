@@ -51,7 +51,7 @@ const FullStats = ({ matchStats, isLoading, error }: { matchStats: IFixturesStat
 
     return (
         <div className='flex-1'>
-            <div className='max-w-fit text-center m-auto bg-green-500 px-3 relative top-3'>
+            <div className='max-w-fit text-center m-auto bg-green-400 px-3 relative top-3'>
                 <div>
                     <p className='text-xl font-normal italic text-white'>
                         <span>Estadísticas</span>

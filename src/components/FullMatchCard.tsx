@@ -25,7 +25,7 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
 
     return (
         <motion.div className='w-full mb-3' {...fadeInAnimation}>
-            <div className='w-[170px] text-center m-auto bg-green-500 px-4 py-2 relative top-9'>
+            <div className='w-[170px] text-center m-auto bg-green-400 px-4 py-2 relative top-9'>
                 <div>
                     <p className='text-4xl font-extralight'>
                         <span>{format(new Date(matchData.fixture.date), 'dd')}</span>
@@ -74,7 +74,7 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
                             <p>
                                 <span>{matchData.teams.home.name}</span>
                                 {matchIsFinished &&
-                                    <span className='bg-green-500 text-gray-50 not-italic px-2 ml-2'>{matchData.goals.home}</span>
+                                    <span className='bg-green-400 text-gray-50 not-italic px-2 ml-2'>{matchData.goals.home}</span>
                                 }
                             </p>
                         </div>
@@ -87,7 +87,7 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
                             <p>
                                 <span>{matchData.teams.away.name}</span>
                                 {matchIsFinished &&
-                                    <span className='bg-green-500 text-gray-50 not-italic px-2 ml-2'>{matchData.goals.away}</span>
+                                    <span className='bg-green-400 text-gray-50 not-italic px-2 ml-2'>{matchData.goals.away}</span>
                                 }
                             </p>
                         </div>
@@ -96,7 +96,7 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
                         <img src={matchData.teams.away.logo} alt={matchData.teams.away.name} className='w-20 m-auto' />
                     </Link>
                 </div>
-                <div className='bg-green-500 w-full text-xs font-light py-1 tracking-widest'>www.portalverdolaga.com</div>
+                <div className='bg-green-400 w-full text-xs font-light py-1 tracking-widest'>www.portalverdolaga.com</div>
             </div>
         </motion.div >
     );

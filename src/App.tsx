@@ -30,7 +30,7 @@ const App = () => {
 
           {/* Ruta para la información del partido */}
           <Route path="/next-match" element={<NextMatch />} />
-          <Route path="/previous-match" element={<PreviousMatch />} />
+          <Route path="/last-match" element={<PreviousMatch />} />
           <Route path="/fixture-team" element={<FixtureTeam />} />
           <Route path="/detail-match" element={<MatchDetail />} />
         </Routes>

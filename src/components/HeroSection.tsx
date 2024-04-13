@@ -10,15 +10,15 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className='fixed w-4/5 sm:w-1/2 m-auto drop-shadow-[-3px_3px_6px_rgba(0,0,0,1)]'>
+                className='fixed w-11/12 sm:w-1/2 m-auto drop-shadow-[-3px_3px_6px_rgba(0,0,0,1)]'>
                 {/* Logos */}
-                <div className='flex justify-center py-4'>
-                    <img src={logoPortalVerdolga} className='w-24 pr-2' />
+                <div className='flex justify-center py-2 space-x-2'>
+                    <img src={logoPortalVerdolga} className='w-24' />
                     <img src={escudoAtleticoNacional} className='w-16' />
                 </div>
 
                 {/* Divider */}
-                <hr className='w-56 m-auto' />
+                <hr className='h-[2px] w-56 m-auto border-t-0 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent' />
 
                 {/* Title + Lema */}
                 <div className='text-gray-600 py-4 text-center'>
@@ -26,7 +26,7 @@ const HeroSection = () => {
                         initial={{ width: "0vw", x: "-50vw" }}
                         animate={{ width: "100%", x: 0 }}
                         transition={{ duration: 1, origin: 1 }}
-                    >PORTAL VERDOLAGA</motion.h1>
+                    ><span>PORTAL VERDOLAGA</span></motion.h1>
                     <motion.blockquote className='text-2xl sm:text-3xl font-extralight text-gray-100 z-0'
                         initial={{ width: "0vw", x: "150vw" }}
                         animate={{ width: "100%", x: 0 }}
