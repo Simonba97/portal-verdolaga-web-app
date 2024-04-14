@@ -1,6 +1,7 @@
 import { IApiFootballResponse } from "../../models/IFixturesItem";
 import { isApiEnabled } from '../../../config/apiConfig';
 import dataTest from '../../mockData/dataTest.json';
+import { useLocation } from "react-router-dom";
 
 /**
  * Servicio "Wrap" que contiene los metodos necesarios de conexión con los servicios de sharePoint para una lista
@@ -17,6 +18,7 @@ export abstract class ApiFootballService {
     private _API_KEY: string;
     private _baseAPIUrl: string;
     private _headers: any;
+    private _isApiEnabledByURL: boolean = false;
 
     /**
       * Crear una instancia de ApiFootballService
@@ -31,6 +33,11 @@ export abstract class ApiFootballService {
             'X-RapidAPI-Key': this._API_KEY,
             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
         };
+
+        // Permitir las consultas al API si no están habilitadas por código mediante la URL
+        const location = useLocation();
+        const queryParams = new URLSearchParams(location.search);
+        this._isApiEnabledByURL = Boolean(queryParams.get('testdev'));
     }
 
     /**
@@ -43,7 +50,7 @@ export abstract class ApiFootballService {
         try {
 
             //Restringir las consultas al API si no están habilitadas
-            if (!isApiEnabled) {
+            if (!isApiEnabled && !this._isApiEnabledByURL) {
                 return {
                     response: dataTest // devolvemos la información de prueba
                 };
