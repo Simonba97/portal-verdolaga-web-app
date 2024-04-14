@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import bgCardApp from '../../../src/assets/bgCardApp.jpg'
 
-const Sidebar1 = () => {
-    const [isOpen, setIsOpen] = useState(false); // Estado para controlar si el Sidebar1 está abierto o cerrado
+const SideBar = () => {
+    const [isOpen, setIsOpen] = useState(false); // Estado para controlar si el SideBar está abierto o cerrado
 
-    // Función para alternar entre abrir y cerrar el Sidebar1
+    // Función para alternar entre abrir y cerrar el SideBar
     const toggleSideBar = () => {
         setIsOpen(!isOpen);
     };
@@ -18,7 +18,7 @@ const Sidebar1 = () => {
 
     return (
         <>
-            {/* Menu open Sidebar1 */}
+            {/* Menu open SideBar */}
             <div id="menuOpen">
                 <motion.button className="bg-green-400 fixed p-3 mt-5 ml-5 fill-white" onClick={toggleSideBar} {...fadeInAnimation}>
                     <svg className="w-6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
@@ -29,7 +29,7 @@ const Sidebar1 = () => {
 
             <div className={`bg-center bg-cover fixed inset-y-0 left-0 w-full sm:w-72 p-4 transition-all duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-50 uppercase text-gray-600 text-2xl tracking-widest`} style={{ backgroundImage: `url(${bgCardApp})` }}>
 
-                {/* Header Sidebar1 */}
+                {/* Header SideBar */}
                 <div id="headerSideBar" className="flex justify-end">
                     <button className="bg-green-400 p-3 fill-white" onClick={toggleSideBar}>
                         <svg className="w-6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
@@ -38,7 +38,7 @@ const Sidebar1 = () => {
                     </button>
                 </div>
 
-                {/* Options Sidebar1 */}
+                {/* Options SideBar */}
                 <ul className="flex flex-col items-start text-3xl space-y-6 mt-8 sm:space-y-3 sm:mt-4 sm:text-2xl" onClick={closeSideBar} >
 
                     {/* Home option */}
@@ -84,7 +84,7 @@ const Sidebar1 = () => {
 
                 </ul>
 
-                {/* Footer Sidebar1 */}
+                {/* Footer SideBar */}
                 <div id="footerSideBar" className="w-11/12 sm:w-10/12 fixed bottom-0 mb-4">
                     <hr className='h-[2px] w-11/12  m-auto border-t-0 bg-transparent bg-gradient-to-r from-transparent via-gray-400 to-transparent sm:w-full' />
                     {/* <hr className='  m-auto border-gray-300 mt-2' /> */}
@@ -121,4 +121,4 @@ const Sidebar1 = () => {
     );
 };
 
-export default Sidebar1
+export default SideBar
