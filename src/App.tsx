@@ -6,7 +6,7 @@ import PreviousMatch from "./pages/PreviousMatch";
 import FixtureTeam from "./pages/FixtureTeam";
 import MatchDetail from "./pages/MatchDetail";
 import bgApp from '../src/assets/bgApp.jpg';
-import SideBar from "./components/common/SideBar";
+import Sidebar1 from "./components/common/Sidebar1";
 
 const App = () => {
   return (
@@ -15,10 +15,8 @@ const App = () => {
       {/* Cover */}
       <div className="fixed -z-50 h-full w-full bg-cover" style={{ backgroundImage: `url(${bgApp})` }}></div>
 
-
-
       {/* Renderiza el componente SideBar */}
-      <SideBar />
+      <Sidebar1 />
       {/* Agrega un espacio de margen inferior al contenido principal */}
       <main className="pb-20">
         {/* Rutas y componentes del contenido principal */}
