@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { fadeInAnimation } from "../../utils/animationConstants";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from 'framer-motion';
-import bgCardApp from '../../../src/assets/bgCardApp.jpg'
 
 const SideBar = () => {
     const [isOpen, setIsOpen] = useState(false); // Estado para controlar si el SideBar está abierto o cerrado
@@ -16,6 +15,12 @@ const SideBar = () => {
         setIsOpen(false);
     };
 
+    const location = useLocation();
+    // Obtener los parámetros de consulta de la URL actual
+    const queryParams = new URLSearchParams(location.search);
+    // Verificar si hay parámetros de consulta y formatearlos como una cadena
+    const appendParams = queryParams.toString() ? `?${queryParams.toString()}` : '';
+
     return (
         <>
             {/* Menu open SideBar */}
@@ -27,7 +32,7 @@ const SideBar = () => {
                 </motion.button>
             </div>
 
-            <div className={`bg-center bg-cover fixed inset-y-0 left-0 w-full sm:w-72 p-4 transition-all duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-50 uppercase text-gray-600 text-2xl tracking-widest`} style={{ backgroundImage: `url(${bgCardApp})` }}>
+            <div className={`bg-gray-100 fixed inset-y-0 left-0 w-full sm:w-72 p-4 transition-all duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-50 uppercase text-gray-600 text-2xl tracking-widest`}>
 
                 {/* Header SideBar */}
                 <div id="headerSideBar" className="flex justify-end">
@@ -43,7 +48,7 @@ const SideBar = () => {
 
                     {/* Home option */}
                     <li id="homeOption">
-                        <Link to={'/'} className="w-full flex space-x-4">
+                        <Link to={'/' + appendParams} className="w-full flex space-x-4">
                             <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 19h3v-5q0-.425.288-.712T10 13h4q.425 0 .713.288T15 14v5h3v-9l-6-4.5L6 10zm-2 0v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-4q-.425 0-.712-.288T13 20v-5h-2v5q0 .425-.288.713T10 21H6q-.825 0-1.412-.587T4 19m8-6.75" /></svg>
                             <span id="homeLabel">Inicio</span>
                         </Link>
@@ -51,7 +56,7 @@ const SideBar = () => {
 
                     {/* Next Match option */}
                     <li id="liveMatchOption">
-                        <Link to={'/next-match'} className="w-full flex space-x-4">
+                        <Link to={'/next-match' + appendParams} className="w-full flex space-x-4">
                             <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 15q-.425 0-.712-.288T14.5 14v-4q0-.425.288-.712T15.5 9H18q.425 0 .713.288T19 10v4q0 .425-.288.713T18 15zm.5-1.5h1.5v-3H16zm-9.5 0h2.25q.325 0 .538.213t.212.537q0 .325-.213.538T8.75 15H6q-.425 0-.712-.288T5 14v-1.5q0-.425.288-.712T6 11.5h2v-1H5.75q-.325 0-.537-.213T5 9.75q0-.325.213-.537T5.75 9H8.5q.425 0 .713.288T9.5 10v1.5q0 .425-.288.713T8.5 12.5h-2zM4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h3V3q0-.425.288-.712T8 2q.425 0 .713.288T9 3v1h6V3q0-.425.288-.712T16 2q.425 0 .713.288T17 3v1h3q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm0-2h7.25v-.75q0-.325.213-.537T12 16.5q.325 0 .538.213t.212.537V18H20V6h-7.25v.75q0 .325-.213.538T12 7.5q-.325 0-.537-.213t-.213-.537V6H4zm0 0V6zm8-7q-.325 0-.537-.213t-.213-.537q0-.325.213-.537T12 9.5q.325 0 .538.213t.212.537q0 .325-.213.538T12 11m0 3.5q-.325 0-.537-.213t-.213-.537q0-.325.213-.537T12 13q.325 0 .538.213t.212.537q0 .325-.213.538T12 14.5" /></svg>
                             <span id="liveMatchLabel">En vivo</span>
                         </Link>
@@ -60,7 +65,7 @@ const SideBar = () => {
 
                     {/* Next Match option */}
                     <li id="nextMatchOption">
-                        <Link to={'/next-match'} className="w-full flex space-x-4">
+                        <Link to={'/next-match' + appendParams} className="w-full flex space-x-4">
                             <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2h7v2.13c-1.76.46-3 2.05-3 3.87a4.01 4.01 0 0 0 3 3.87V18H4v-2h3V8H4zm9 0h7v2h-3v8h3v2h-7v-2.13c1.76-.46 3-2.05 3-3.87a4.01 4.01 0 0 0-3-3.87zm-9 4h1v4H4zm15 0h1v4h-1zm-6 .27c.62.36 1 1.02 1 1.73s-.38 1.37-1 1.73zm-2 0v3.46c-.62-.36-1-1.02-1-1.73s.38-1.37 1-1.73" /></svg>
                             <span id="nextMatchLabel">Próximo Partido</span>
                         </Link>
@@ -68,7 +73,7 @@ const SideBar = () => {
 
                     {/* Last Match option */}
                     <li id="lastMatchOption">
-                        <Link to={'/last-match'} className="w-full flex space-x-4">
+                        <Link to={'/last-match' + appendParams} className="w-full flex space-x-4">
                             <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.76 3.7L2.14 4.88L4.43 8a8.23 8.23 0 0 1 1.92-.72M11 9v2h7v.29l-5 1.42v2.79A4.5 4.5 0 1 1 8.5 11H9V9h-.5a6.5 6.5 0 1 0 6.5 6.5v-1.59L22 12V9m-5.76-5.3L13.85 7h2.47l1.54-2.12M9 2v5h2V2Z" /></svg>
                             <span id="lastMatchLabel">Último Partido</span>
                         </Link>
@@ -76,7 +81,7 @@ const SideBar = () => {
 
                     {/* Calendar option */}
                     <li id="calendarOption" >
-                        <Link to={'/fixture-team'} className="w-full flex space-x-4">
+                        <Link to={'/fixture-team' + appendParams} className="w-full flex space-x-4">
                             <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6zm7 6q-.425 0-.712-.288T11 13q0-.425.288-.712T12 12q.425 0 .713.288T13 13q0 .425-.288.713T12 14m-4 0q-.425 0-.712-.288T7 13q0-.425.288-.712T8 12q.425 0 .713.288T9 13q0 .425-.288.713T8 14m8 0q-.425 0-.712-.288T15 13q0-.425.288-.712T16 12q.425 0 .713.288T17 13q0 .425-.288.713T16 14m-4 4q-.425 0-.712-.288T11 17q0-.425.288-.712T12 16q.425 0 .713.288T13 17q0 .425-.288.713T12 18m-4 0q-.425 0-.712-.288T7 17q0-.425.288-.712T8 16q.425 0 .713.288T9 17q0 .425-.288.713T8 18m8 0q-.425 0-.712-.288T15 17q0-.425.288-.712T16 16q.425 0 .713.288T17 17q0 .425-.288.713T16 18" /></svg>
                             <span id="calendarLabel">Calendario</span>
                         </Link>
