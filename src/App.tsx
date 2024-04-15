@@ -1,17 +1,32 @@
+import { useEffect } from 'react';
+import { Route, Routes, useLocation, } from 'react-router-dom';
+import ReactGA from 'react-ga';
+import SideBar from "./components/common/SideBar";
 import FooterNextGame from "./components/common/FooterNextGame";
 import HeroSection from "./components/HeroSection";
 import NextMatch from "./pages/NextMatch";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PreviousMatch from "./pages/PreviousMatch";
 import FixtureTeam from "./pages/FixtureTeam";
 import MatchDetail from "./pages/MatchDetail";
 import bgApp from '../src/assets/bgApp.jpg';
-import SideBar from "./components/common/SideBar";
 
 const App = () => {
-  return (
-    <Router>
 
+  // Inicializar Google Analytics
+  useEffect(() => {
+    ReactGA.initialize(import.meta.env.VITE_GOOGLEANALYTICS_KEY);
+  }, []);
+
+  // Obtener la ubicación actual
+  const location = useLocation();
+
+  // Enviar el evento de página vista a Google Analytics cuando cambie la ubicación
+  useEffect(() => {
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location]);
+
+  return (
+    <div className='App'>
       {/* Cover */}
       <div className="fixed -z-50 h-full w-full bg-cover" style={{ backgroundImage: `url(${bgApp})` }}></div>
 
@@ -36,7 +51,7 @@ const App = () => {
 
       {/* Renderiza el componente FooterNextGame */}
       <FooterNextGame />
-    </Router>
+    </div>
   )
 }
 
