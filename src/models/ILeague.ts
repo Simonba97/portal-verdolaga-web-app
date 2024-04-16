@@ -1,3 +1,4 @@
+import { IRowStanding } from "./IFixturesItem";
 
 export interface ILeague {
   id: number;
@@ -7,4 +8,5 @@ export interface ILeague {
   flag: string | null;
   season: number;
   round: string;
+  standings: IRowStanding[][]
 } // end ILeague

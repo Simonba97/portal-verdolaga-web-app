@@ -17,12 +17,21 @@ export interface IParameters {
 } // end IParameters
 
 export interface IFixtureResponse {
+  events: any | null;
+  lineups: any | null;
+  players: any | null;
+  statistics: IStatisticsInsideMatchData[] | null;
   fixture: IFixture;
   league: ILeague;
   teams: ITeams;
   goals: IGoals;
   score: IScore;
+
 } // end IFixtureResponse
+
+export interface IStandingsResponse {
+  league: ILeague;
+} // end IStandingsResponse
 
 export interface IFixturesStatisticsResponse {
   statistics: IStatistics[];
@@ -50,6 +59,11 @@ export interface IStatistics {
   value: number | null;
 } // end IStatistics
 
+export interface IStatisticsInsideMatchData {
+  statistics: IStatistics[],
+  team: ITeam
+} // end IStatisticsInsideMatchData
+
 
 export interface IStatus {
   long: string;
@@ -65,3 +79,45 @@ export interface IApiFootballResponse {
   paging?: IPaging;
   response?: IFixtureResponse[] | ITeamsInformationResponse[];
 } // end IApiFootballResponse
+
+export interface IRowStanding {
+  rank: number;
+  team: ITeam;
+  points: number;
+  goalsDiff: number;
+  group: string;
+  form: string;
+  status: string;
+  description: string;
+  all: {
+    played: number;
+    win: number;
+    draw: number;
+    lose: number;
+    goals: {
+      for: number;
+      against: number;
+    }
+  };
+  home: {
+    played: number;
+    win: number;
+    draw: number;
+    lose: number;
+    goals: {
+      for: number;
+      against: number;
+    }
+  };
+  away: {
+    played: number;
+    win: number;
+    draw: number;
+    lose: number;
+    goals: {
+      for: number;
+      against: number;
+    }
+  };
+  update: string;
+} // end IStatus

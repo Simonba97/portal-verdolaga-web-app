@@ -32,7 +32,7 @@ const SideBar = () => {
                 </motion.button>
             </div>
 
-            <div className={`bg-gray-100 fixed inset-y-0 left-0 w-full sm:w-72 p-4 transition-all duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-50 uppercase text-gray-600 text-2xl tracking-widest`}>
+            <div className={`bg-gray-100 fixed inset-y-0 left-0 w-full sm:w-80 p-4 transition-all duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-50 uppercase text-gray-600 text-2xl tracking-widest`}>
 
                 {/* Header SideBar */}
                 <div id="headerSideBar" className="flex justify-end">
@@ -84,6 +84,14 @@ const SideBar = () => {
                         <Link to={'/fixture-team' + appendParams} className="w-full flex space-x-4">
                             <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6zm7 6q-.425 0-.712-.288T11 13q0-.425.288-.712T12 12q.425 0 .713.288T13 13q0 .425-.288.713T12 14m-4 0q-.425 0-.712-.288T7 13q0-.425.288-.712T8 12q.425 0 .713.288T9 13q0 .425-.288.713T8 14m8 0q-.425 0-.712-.288T15 13q0-.425.288-.712T16 12q.425 0 .713.288T17 13q0 .425-.288.713T16 14m-4 4q-.425 0-.712-.288T11 17q0-.425.288-.712T12 16q.425 0 .713.288T13 17q0 .425-.288.713T12 18m-4 0q-.425 0-.712-.288T7 17q0-.425.288-.712T8 16q.425 0 .713.288T9 17q0 .425-.288.713T8 18m8 0q-.425 0-.712-.288T15 17q0-.425.288-.712T16 16q.425 0 .713.288T17 17q0 .425-.288.713T16 18" /></svg>
                             <span id="calendarLabel">Calendario</span>
+                        </Link>
+                    </li>
+
+                    {/* Standings option */}
+                    <li id="standingOption" >
+                        <Link to={'/' + appendParams} className="w-full flex space-x-4">
+                            <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M228 128a12 12 0 0 1-12 12H116a12 12 0 0 1 0-24h100a12 12 0 0 1 12 12M116 76h100a12 12 0 0 0 0-24H116a12 12 0 0 0 0 24m100 104H116a12 12 0 0 0 0 24h100a12 12 0 0 0 0-24M44 59.31V104a12 12 0 0 0 24 0V40a12 12 0 0 0-17.36-10.73l-16 8a12 12 0 0 0 9.36 22Zm39.73 96.86a27.7 27.7 0 0 0-11.2-18.63A28.89 28.89 0 0 0 32.9 143a27.71 27.71 0 0 0-4.17 7.54a12 12 0 0 0 22.55 8.21a4 4 0 0 1 .58-1a4.78 4.78 0 0 1 6.5-.82a3.82 3.82 0 0 1 1.61 2.6a3.63 3.63 0 0 1-.77 2.77l-.13.17l-28.68 38.35A12 12 0 0 0 40 220h32a12 12 0 0 0 0-24h-8l14.28-19.11a27.48 27.48 0 0 0 5.45-20.72" /></svg>
+                            <span id="calendarLabel">Tabla de posiciones</span>
                         </Link>
                     </li>
 

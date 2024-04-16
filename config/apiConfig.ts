@@ -1,2 +1,2 @@
 // Variable que controla si la consulta a la API está habilitada o no
-export const isApiEnabled = false;
+export const isApiEnabled: boolean = false;

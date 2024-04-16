@@ -1,9 +1,8 @@
-import { IFixturesStatisticsResponse } from '../../models/IFixturesItem';
+import { IStatisticsInsideMatchData } from '../../models/IFixturesItem';
 import MessageCard from '../MessageCard';
 import { TypesStatistics, TypesStatisticsES } from '../../utils/TypesStatistics';
 
-const FullStats = ({ matchStats, isLoading, error }: { matchStats: IFixturesStatisticsResponse[] | undefined, isLoading: boolean, error: any }) => {
-
+const FullStats = ({ matchStats, isLoading, error }: { matchStats: IStatisticsInsideMatchData[] | undefined, isLoading: boolean, error: any }) => {
     if (isLoading) {
         return (
             <MessageCard titleMsj='Cargando información...' descMsj='Por favor espere...' isLoading={true} />
@@ -16,6 +15,7 @@ const FullStats = ({ matchStats, isLoading, error }: { matchStats: IFixturesStat
         );
     }
 
+    debugger
     const homeTeamStats = {
         teamName: matchStats[0].team.name,
         [TypesStatistics.BallPossession]: matchStats[0].statistics.find(event => event.type == TypesStatistics.BallPossession)?.value,
@@ -49,7 +49,7 @@ const FullStats = ({ matchStats, isLoading, error }: { matchStats: IFixturesStat
     };
 
     return (
-        <div className='flex-1'>
+        <div>
             <div className='max-w-fit text-center m-auto bg-green-400 px-3 relative top-3'>
                 <div>
                     <p className='text-xl font-normal italic text-white'>
@@ -122,8 +122,6 @@ const FullStats = ({ matchStats, isLoading, error }: { matchStats: IFixturesStat
         </div>
 
     );
-
-
 
 }
 

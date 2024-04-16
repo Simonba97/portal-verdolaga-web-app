@@ -49,7 +49,7 @@ export class FixtureService extends ApiFootballService {
      */
     public async getFixture(teamId: number): Promise<IFixtureResponse[] | undefined> {
         try {
-            const endpoint = `fixtures?team=${teamId}&season=2024`;
+            const endpoint = `fixtures?team=${teamId}&season=${new Date().getFullYear()}`;
             const data: any = await this.makeRequest(endpoint);
 
             return data?.response || undefined;

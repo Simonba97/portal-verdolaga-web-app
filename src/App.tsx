@@ -46,6 +46,7 @@ const App = () => {
           <Route path="/last-match" element={<PreviousMatch />} />
           <Route path="/fixture-team" element={<FixtureTeam />} />
           <Route path="/detail-match" element={<MatchDetail />} />
+          {/*  <Route path="/standings" element={<StandingsDetail />} /> */}
         </Routes>
       </main>
 
