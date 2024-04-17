@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { fadeInAnimation } from "../../utils/animationConstants";
 
 
 interface Tab {
     title: string;
+    iconContent: React.ReactNode;
     content: React.ReactNode;
 }
 
@@ -20,24 +23,24 @@ const Tabs: React.FC<TabsProps> = ({ tabs, isLoading }) => {
     };
 
     return (
-        <div id="tabs" className="">
+        <motion.div id="tabs" className="" {...fadeInAnimation}>
             {!isLoading &&
-                <div className="flex">
+                <div id="headerTabs" className="flex space-x-1 ">
                     {tabs.map((tab, index) => (
                         <div
                             key={index}
-                            className={`w-1/2 cursor-pointer p-1 px-3 ${index === activeTab ? 'bg-green-400' : 'bg-gray-200 '}`}
+                            className={`w-1/2 flex items-center cursor-pointer rounded-t p-1 px-3 space-x-1 ${index === activeTab ? 'bg-green-400' : 'bg-green-200'}`}
                             onClick={() => handleTabClick(index)}
                         >
-                            <span className={`text-base font-normal italic ${index === activeTab ? 'text-white' : 'text-black'}`}>{tab.title}</span>
+                            <div className={`${index === activeTab ? 'fill-gray-900' : 'fill-gray-500'}`}>{tab.iconContent}</div><span className={`${index === activeTab ? 'text-gray-900' : 'text-gray-500'}`}>{tab.title}</span>
                         </div>
                     ))}
                 </div>
             }
-            <div id="contentTab" className="w-80">
+            <div id="contentTab" className="w-96">
                 {tabs[activeTab].content}
             </div>
-        </div>
+        </motion.div>
     );
 }
 
