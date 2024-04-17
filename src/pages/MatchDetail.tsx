@@ -52,8 +52,6 @@ const MatchDetail = () => {
                     }
                 }
 
-                setMatchData(dataResponse);
-
                 setStatisticsMatchData(dataResponse?.statistics ?? undefined);
                 setMatchData(dataResponse);
 

@@ -26,7 +26,6 @@ export interface IFixtureResponse {
   teams: ITeams;
   goals: IGoals;
   score: IScore;
-
 } // end IFixtureResponse
 
 export interface IStandingsResponse {
@@ -77,7 +76,7 @@ export interface IApiFootballResponse {
   errors?: any[];
   results?: number;
   paging?: IPaging;
-  response?: IFixtureResponse[] | ITeamsInformationResponse[];
+  response?: any[];
 } // end IApiFootballResponse
 
 export interface IRowStanding {

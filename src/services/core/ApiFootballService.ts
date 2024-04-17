@@ -1,6 +1,8 @@
 import { IApiFootballResponse } from "../../models/IFixturesItem";
 import { isApiEnabled } from '../../../config/apiConfig';
-import dataTest from '../../mockData/dataTest.json';
+import dataTestFixture from '../../mockData/dataTestFixture.json';
+import dataTestTeam from '../../mockData/dataTestTeam.json';
+import dataTestStandings from '../../mockData/dataTestStandings.json';
 import { useLocation } from "react-router-dom";
 
 /**
@@ -51,9 +53,19 @@ export abstract class ApiFootballService {
 
             //Restringir las consultas al API si no están habilitadas
             if (!isApiEnabled && !this._isApiEnabledByURL) {
-                return {
-                    response: dataTest // devolvemos la información de prueba
-                };
+                if (endpoint.indexOf('fixtures?') != -1) {
+                    return {
+                        response: dataTestFixture // devolvemos la información de prueba
+                    };
+                } else if (endpoint.indexOf('teams?') != -1) {
+                    return {
+                        response: dataTestTeam // devolvemos la información de prueba
+                    };
+                } else if (endpoint.indexOf('standings?') != -1) {
+                    return {
+                        response: dataTestStandings // devolvemos la información de prueba
+                    };
+                }
             }
 
             const response = await fetch(`${this._baseAPIUrl}/${endpoint}`, {

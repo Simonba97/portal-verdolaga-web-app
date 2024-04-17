@@ -15,7 +15,6 @@ const FullStats = ({ matchStats, isLoading, error }: { matchStats: IStatisticsIn
         );
     }
 
-    debugger
     const homeTeamStats = {
         teamName: matchStats[0].team.name,
         [TypesStatistics.BallPossession]: matchStats[0].statistics.find(event => event.type == TypesStatistics.BallPossession)?.value,
