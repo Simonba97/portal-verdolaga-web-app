@@ -17,14 +17,14 @@ const FullStandings = ({ standingsData, isLoading, error }: { standingsData: IRo
 
     return (
         <div>
-            <div className='max-w-fit text-center m-auto bg-green-400 px-3 relative top-3'>
+            {/* <div className='max-w-fit text-center m-auto bg-green-400 px-3 relative top-3'>
                 <div>
                     <p className='text-xl font-normal italic text-white'>
                         <span>Tabla de posiciones</span>
                     </p>
                 </div>
-            </div>
-            <div className='w-full bg-gray-100 px-1 pt-5 pb-3 justify-center' >
+            </div> */}
+            <div className='w-full bg-gray-100 px-1 py-2 justify-center' >
                 <table className="table-auto">
                     <thead>
                         <tr>

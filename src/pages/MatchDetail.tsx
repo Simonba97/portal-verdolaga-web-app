@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import FullStats from '../components/statistics/FullStats';
 import { StandingsService } from '../services/StandingsService';
 import FullStandings from '../components/statistics/FullStandings';
+import Tabs from '../components/common/Tabs';
 
 let hasFetchedData: boolean = false;
 
@@ -78,11 +79,14 @@ const MatchDetail = () => {
                 </div>
             </section>
             <section className="flex justify-center">
-                <div className='flex space-x-2 uppercase'>
-                    <FullStats matchStats={statisticsMatchData} isLoading={isLoading} error={error} />
-                    <FullStandings standingsData={standingsByLeagueData} isLoading={isLoading} error={error} />
-                    {/* <FullStats matchStats={statisticsMatchData} isLoading={isLoading} error={error} /> */}
-                </div>
+                <Tabs
+                    tabs={[
+                        { title: 'ESTADÍSTICAS', content: <FullStats matchStats={statisticsMatchData} isLoading={isLoading} error={error} /> },
+                        { title: 'TABLA DE POSICIONES', content: <FullStandings standingsData={standingsByLeagueData} isLoading={isLoading} error={error} /> },
+                        /* { title: 'Line up', content: <div><span>Hola</span></div> } */
+                    ]}
+                    isLoading={isLoading}
+                />
             </section>
         </div>
     )

@@ -49,14 +49,14 @@ const FullStats = ({ matchStats, isLoading, error }: { matchStats: IStatisticsIn
 
     return (
         <div>
-            <div className='max-w-fit text-center m-auto bg-green-400 px-3 relative top-3'>
+            {/* <div className='max-w-fit text-center m-auto bg-green-400 px-3 relative top-3'>
                 <div>
                     <p className='text-xl font-normal italic text-white'>
                         <span>Estadísticas</span>
                     </p>
                 </div>
-            </div>
-            <div className='w-full bg-gray-100 px-1 pt-5 pb-3 text-center justify-center' >
+            </div> */}
+            <div className='w-full bg-gray-100 px-1 py-2 text-center justify-center' >
                 <div className='flex flex-row'>
                     <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.BallPossession] ? homeTeamStats[TypesStatistics.BallPossession] : 0}</span></div>
                     <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.BallPossession}</span></div>
