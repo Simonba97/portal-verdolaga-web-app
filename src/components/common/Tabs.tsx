@@ -29,10 +29,10 @@ const Tabs: React.FC<TabsProps> = ({ tabs, isLoading }) => {
                     {tabs.map((tab, index) => (
                         <div
                             key={index}
-                            className={`w-1/2 flex items-center cursor-pointer rounded-t p-1 px-3 space-x-1 ${index === activeTab ? 'bg-green-400' : 'bg-green-200'}`}
+                            className={`w-1/2 flex items-center cursor-pointer rounded-t p-1 px-3 space-x-1 ${index === activeTab ? 'bg-gray-100' : 'bg-green-400'}`}
                             onClick={() => handleTabClick(index)}
                         >
-                            <div className={`${index === activeTab ? 'fill-gray-900' : 'fill-gray-500'}`}>{tab.iconContent}</div><span className={`${index === activeTab ? 'text-gray-900' : 'text-gray-500'}`}>{tab.title}</span>
+                            <div className={`${index === activeTab ? 'stroke-black' : 'stroke-black'}`}>{tab.iconContent}</div><span className={`${index === activeTab ? 'text-black' : 'text-black'}`}>{tab.title}</span>
                         </div>
                     ))}
                 </div>

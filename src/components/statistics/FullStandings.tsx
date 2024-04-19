@@ -1,5 +1,6 @@
 import { IRowStanding } from '../../models/IFixturesItem';
 import { Global } from '../../utils/Global';
+import { TypeStatusStandings } from '../../utils/TypesStatusStandings';
 import MessageCard from '../MessageCard';
 
 const FullStandings = ({ standingsData, isLoading, error }: { standingsData: IRowStanding[], isLoading: boolean, error: any }) => {
@@ -29,6 +30,7 @@ const FullStandings = ({ standingsData, isLoading, error }: { standingsData: IRo
                     <thead>
                         <tr className='bg-gray-300'>
                             <th className="p-1 font-normal"><span>POS</span></th>
+                            <th className="p-1 text-start font-normal"></th>
                             <th className="p-1 text-start font-normal"><span>EQUIPO</span></th>
                             <th className="p-1 font-normal"><span>PJ</span></th>
                             <th className="p-1 font-normal"><span>V</span></th>
@@ -38,17 +40,51 @@ const FullStandings = ({ standingsData, isLoading, error }: { standingsData: IRo
                             <th className="p-1 font-normal"><span>PTOS</span></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                         {standingsData.map(row => (
-                            <tr className={`${row.team.id === Global.NACIONAL_ID_API_FOOTBALL ? 'bg-green-200 font-normal' : 'font-extralight'}`}>
-                                <td className='text-center border-l border-b'>{row.rank}</td>
-                                <td className='px-1 border-b'>{row.team.name}</td>
-                                <td className='text-center border-b border-r'>{row.all.played}</td>
-                                <td className='text-center border-b'>{row.all.win}</td>
-                                <td className='text-center border-b'>{row.all.draw}</td>
-                                <td className='text-center border-b'>{row.all.lose}</td>
-                                <td className='text-center border-b border-l border-r'>{row.goalsDiff}</td>
-                                <td className='text-center border-b font-normal border-r'>{row.points}</td>
+                            <tr key={`rowStandingTeam-${row.team.id}`} className={`${row.team.id === Global.NACIONAL_ID_API_FOOTBALL ? 'bg-green-200 font-normal' : 'font-extralight'}`}>
+                                <td className={`text-center border-l-4 border-b ${row.description === 'Next Round' && 'border-l-green-500'}`}>
+                                    <span>{row.rank}</span>
+                                </td>
+                                <td className='text-center border-b'>
+                                    {row.status === TypeStatusStandings.Up &&
+                                        <div id='status' className='stroke-green-500'>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" className="w-4">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                                            </svg>
+                                        </div>
+                                    }
+                                    {row.status === TypeStatusStandings.Down &&
+                                        <div id='status' className='stroke-red-600'>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" className="w-4">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                            </svg>
+                                        </div>
+                                    }
+                                </td>
+                                <td className='px-1 border-b'>
+                                    <div className='flex items-center'>
+                                        <span>{row.team.name}</span>
+                                    </div>
+                                </td>
+                                <td className='text-center border-b border-r'>
+                                    <span>{row.all.played}</span>
+                                </td>
+                                <td className='text-center border-b'>
+                                    <span>{row.all.win}</span>
+                                </td>
+                                <td className='text-center border-b'>
+                                    <span>{row.all.draw}</span>
+                                </td>
+                                <td className='text-center border-b'>
+                                    <span>{row.all.lose}</span>
+                                </td>
+                                <td className='text-center border-b border-l border-r'>
+                                    <span>{row.goalsDiff}</span>
+                                </td>
+                                <td className='text-center border-b font-normal border-r'>
+                                    <span>{row.points}</span>
+                                </td>
                             </tr>
                         ))}
                     </tbody>

@@ -83,12 +83,12 @@ const MatchDetail = () => {
                     tabs={[
                         {
                             title: 'ESTADÍSTICAS',
-                            iconContent: <svg className="w-7 sm:w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 21H3v-2h18zM8 10H4v7h4zm6-7h-4v14h4zm6 3h-4v11h4z" /></svg>,
+                            iconContent: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" className="w-5"> <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" /> </svg>,
                             content: <FullStats matchStats={statisticsMatchData} isLoading={isLoading} error={error} />
                         },
                         {
                             title: 'TABLA DE POSICIONES',
-                            iconContent: <svg className="w-7 sm:w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 11L13 7.5l1.4-1.4l2.1 2.1L20.7 4l1.4 1.4zM11 7H2v2h9zm10 6.4L19.6 12L17 14.6L14.4 12L13 13.4l2.6 2.6l-2.6 2.6l1.4 1.4l2.6-2.6l2.6 2.6l1.4-1.4l-2.6-2.6zM11 15H2v2h9z" /></svg>,
+                            iconContent: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" className="w-6"> <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /> </svg>,
                             content: <FullStandings standingsData={standingsByLeagueData} isLoading={isLoading} error={error} />
                         },
                         /* { title: 'Line up', content: <div><span>Hola</span></div> } */
