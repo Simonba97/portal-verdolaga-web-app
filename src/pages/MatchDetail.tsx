@@ -7,7 +7,7 @@ import FullStats from '../components/statistics/FullStats';
 import { StandingsService } from '../services/StandingsService';
 import FullStandings from '../components/statistics/FullStandings';
 import Tabs from '../components/common/Tabs';
-import { TypesStatusFixturesLong, TypesStatusFixturesShort } from '../utils/TypesStatusFixtures';
+import { TypesStatusFixturesShort } from '../utils/TypesStatusFixtures';
 
 let hasFetchedData: boolean = false;
 
