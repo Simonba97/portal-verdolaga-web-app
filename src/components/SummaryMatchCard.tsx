@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import { es } from 'date-fns/locale'; // Importa el módulo 'es'
 import { Link } from "react-router-dom";
 import { Global } from "../utils/Global";
+import { TypesStatusFixturesShort } from "../utils/TypesStatusFixtures";
 
 const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
     return (
@@ -24,9 +25,12 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
             <Link className='w-full h-full m-auto cursor-pointer' to={`/detail-match?matchId=${matchData.fixture.id}`}>
                 {/* BODY */}
                 <div>
-                    <div className="space-y-[-9px] mb-1">
+                    <div className="space-y-[-6px] mb-1">
                         <p className='text-sm font-light not-italic'>
                             <span>{`${matchData.league.name} - ${matchData.league.season}`}</span>
+                        </p>
+                        <p className='text-xs font-light not-italic'>
+                            <span>{matchData.league.round}</span>
                         </p>
                     </div>
                     <div className="flex items-center">
@@ -34,18 +38,44 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
                             <span className={`w-16 text-sm text-right leading-[16px] ${matchData.teams.home.id === Global.NACIONAL_ID_API_FOOTBALL ? 'font-normal' : 'font-extralight'}`}>{matchData.teams.home.name}</span>
                             <img src={matchData.teams.home.logo} alt={matchData.teams.home.name} className='h-8' />
                         </div>
-                        <span className='text-base font-light not-italic'>
-                            {matchData.fixture.status.short == 'FT' ? `${matchData.goals.home} - ${matchData.goals.away}` : format(new Date(matchData.fixture.date), 'HH:HH')}
-                        </span>
+
+                        {/* Match Finished */}
+                        {matchData.fixture.status.short === TypesStatusFixturesShort.MatchFinished &&
+                            <span className='text-base font-light not-italic'>
+                                {`${matchData.goals.home} - ${matchData.goals.away}`}
+                            </span>
+                        }
+
+                        {/* Match Not Started */}
+                        {matchData.fixture.status.short === TypesStatusFixturesShort.NotStarted &&
+                            <span className='text-base font-light not-italic'>
+                                {format(new Date(matchData.fixture.date), 'HH:HH')}
+                            </span>
+                        }
+
+                        {/* Match PostPoned */}
+                        {matchData.fixture.status.short === TypesStatusFixturesShort.MatchPostponed &&
+                            <span className='text-xs font-light not-italic leading-[16px] bg-yellow-200'>
+                                {`Aplazado`}
+                            </span>
+                        }
+
+
+                        {/* Match Time to be Defined */}
+                        {matchData.fixture.status.short === TypesStatusFixturesShort.TimeToBeDefined &&
+                            <span className='text-xs font-light not-italic leading-[16px] bg-red-200'>
+                                {`Sin horario`}
+                            </span>
+                        }
                         <div className="flex items-center ml-2 space-x-1">
                             <img src={matchData.teams.away.logo} alt={matchData.teams.away.name} className='h-8' />
                             <span className={`w-16 text-sm text-left leading-[16px] ${matchData.teams.away.id === Global.NACIONAL_ID_API_FOOTBALL ? 'font-normal' : 'font-extralight'} `}>{matchData.teams.away.name}</span>
                         </div>
                     </div>
                 </div>
-            </Link>
+            </Link >
             {/* <div className='bg-green-400 w-full text-xs font-light py-1 tracking-widest'>www.portalverdolaga.com</div> */}
-        </div>
+        </div >
     )
 }
 

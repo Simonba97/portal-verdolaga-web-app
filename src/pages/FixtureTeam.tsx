@@ -31,21 +31,24 @@ const FixtureTeam = () => {
         const callAsync = async () => {
             try {
                 setLoading(true);
-                const fixtureData: IFixtureResponse[] | undefined = await fixtureService.getFixture(normalizedTeamId);
+
+                const [fixtureData, teamInformationData] = await Promise.all([
+                    fixtureService.getFixture(normalizedTeamId),
+                    teamsService.getTeamInformation(normalizedTeamId)
+                ]);
+
                 // Ordenar la información de respuesta con respecto a la fecha
                 fixtureData?.sort((a, b) => new Date(a.fixture.date).getTime() - new Date(b.fixture.date).getTime());
-                setFixtureTeamData(fixtureData);
 
-                const teamInformationData: ITeamsInformationResponse | undefined = await teamsService.getTeamInformation(normalizedTeamId);
+                setFixtureTeamData(fixtureData);
                 setTeamInformationData(teamInformationData);
 
-                setLoading(false);
-                hasFetchedData = !hasFetchedData;
             } catch (error: any) {
                 setError(error.message || 'Error desconocido');
                 setLoading(false);
             } finally {
                 setLoading(false);
+                hasFetchedData = !hasFetchedData;
             }
         };
 
@@ -64,8 +67,8 @@ const FixtureTeam = () => {
         if (TeamInformationData && FixtureTeamData) {
             componentResult = <>
                 <TeamDetail teamData={TeamInformationData} />
-                {
-                    FixtureTeamData?.map((game) => <SummaryMatchCard matchData={game} />)
+                {FixtureTeamData &&
+                    FixtureTeamData.map((game) => <SummaryMatchCard key={`summaryMatchCardFixture-${game.fixture.id}`} matchData={game} />)
                 }
             </>
         }

@@ -6,6 +6,7 @@ import MessageCard from './MessageCard';
 import { fadeInAnimation } from '../utils/animationConstants';
 import { Link } from 'react-router-dom';
 import bgCardApp from '../../src/assets/bgCardApp.jpg'
+import { TypesStatusFixturesShort } from '../utils/TypesStatusFixtures';
 
 const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureResponse | undefined, isLoading: boolean, error: any }) => {
 
@@ -39,20 +40,44 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
             </div>
             <div className='bg-center bg-cover flex flex-col text-center items-center' style={{ backgroundImage: `url(${bgCardApp})` }}>
                 <div className='pt-9 space-y-[-5px] mb-5 font-light'>
-                    {/* HEADER */}
-                    {matchIsFinished ?
+
+                    {/* Match Finished */}
+                    {matchData.fixture.status.short === TypesStatusFixturesShort.MatchFinished &&
                         <div>
                             <p className='text-2xl font-normal itali'>
                                 <span>FINALIZADO</span>
                             </p>
                         </div>
-                        :
+
+                    }
+
+                    {/* Match Not Started */}
+                    {matchData.fixture.status.short === TypesStatusFixturesShort.NotStarted &&
                         <div>
                             <p className='text-2xl font-normal itali'>
                                 <span>{format(new Date(matchData.fixture.date), 'h:mm a')}</span>
                             </p>
                         </div>
                     }
+
+                    {/* Match PostPoned */}
+                    {matchData.fixture.status.short === TypesStatusFixturesShort.MatchPostponed &&
+                        <div>
+                            <p className='text-2xl font-normal itali bg-yellow-200'>
+                                <span>{'Aplazado'}</span>
+                            </p>
+                        </div>
+                    }
+
+                    {/* Match Time to be Defined */}
+                    {matchData.fixture.status.short === TypesStatusFixturesShort.TimeToBeDefined &&
+                        <div>
+                            <p className='text-2xl font-normal itali bg-red-200'>
+                                <span>{'Sin horario'}</span>
+                            </p>
+                        </div>
+                    }
+
                     <div>
                         <p className='text-xl'>
                             <span>{`${matchData.league.round}`}</span>
