@@ -13,7 +13,7 @@ const TeamDetail = ({ teamData }: { teamData: ITeamsInformationResponse }) => {
                         </p>
                     </div>
                 </div>
-                <div className='bg-[url("../src/assets/bgCardApp.jpg")] bg-center bg-cover flex flex-col text-center items-center'>
+                <div className='bg-gray-100 flex flex-col text-center items-center'>
                     <div className='pt-1 mb-2 font-light z-10'>
                         <div>
                             <p className='text-xl font-normal italic'>
