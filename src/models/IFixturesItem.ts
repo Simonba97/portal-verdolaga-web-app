@@ -37,6 +37,22 @@ export interface IFixturesStatisticsResponse {
   team: ITeam;
 } // end IFixturesStatisticsResponse
 
+export interface ITeamsStatisticsResponse {
+  team: ITeam;
+  form: string;
+
+  //TODO: Falta crear interfaz de los siguientes nodos
+  biggest: any;
+  cards: any;
+  clean_sheet: any;
+  failed_to_score: any;
+  fixtures: any;
+  goals: any;
+  league: any;
+  lineups: any;
+  penalty: any;
+} // end ITeamsStatisticsResponse
+
 export interface ITeamsInformationResponse {
   team: ITeam;
   venue: IVenue;
