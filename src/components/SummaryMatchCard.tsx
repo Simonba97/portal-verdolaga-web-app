@@ -8,7 +8,7 @@ import { TypesStatusFixturesShort } from "../utils/TypesStatusFixtures";
 
 const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
     return (
-        <div className='w-[85%] bg-gray-100 flex flex-row text-center items-center m-auto' >
+        <div className='w-full bg-gray-100 flex flex-row text-center items-center m-auto' >
             <div className='w-[60px] text-center bg-green-400 -ml-8'>
                 <div>
                     <p className='text-xl font-extralight'>

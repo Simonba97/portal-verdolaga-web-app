@@ -1,4 +1,4 @@
-import { ITeamsInformationResponse } from "../models/IFixturesItem";
+import { ITeamsInformationResponse, ITeamsStatisticsResponse } from "../models/IFixturesItem";
 import { ApiFootballService } from "./core/ApiFootballService";
 
 /**
@@ -16,6 +16,22 @@ export class TeamsService extends ApiFootballService {
      * @returns {Promise<IInfoMatchItem>} - Una promesa que se resuelve con la información del partido.
      */
     public async getTeamInformation(teamId: number): Promise<ITeamsInformationResponse | undefined> {
+        try {
+            const endpoint = `teams?id=${teamId}`;
+            const data: any = await this.makeRequest(endpoint);
+
+            return data?.response?.[0] || undefined;
+        } catch (error) {
+            console.error(`Error fetching information for team ${teamId}:`, error);
+            return undefined;
+        }
+    } // end getTeamInformation
+
+    /**
+     * Obtiene la información de un partido desde un archivo.
+     * @returns {Promise<IInfoMatchItem>} - Una promesa que se resuelve con la información del partido.
+     */
+    public async getTeamStatistics(teamId: number): Promise<ITeamsStatisticsResponse | undefined> {
         try {
             const endpoint = `teams?id=${teamId}`;
             const data: any = await this.makeRequest(endpoint);
