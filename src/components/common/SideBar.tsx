@@ -55,18 +55,18 @@ const SideBar = () => {
                     </li>
 
                     {/* Next Match option */}
-                    <li id="liveMatchOption">
+                    {/* <li id="liveMatchOption">
                         <Link to={'/next-match' + appendParams} className="w-full flex space-x-4">
-                            <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 15q-.425 0-.712-.288T14.5 14v-4q0-.425.288-.712T15.5 9H18q.425 0 .713.288T19 10v4q0 .425-.288.713T18 15zm.5-1.5h1.5v-3H16zm-9.5 0h2.25q.325 0 .538.213t.212.537q0 .325-.213.538T8.75 15H6q-.425 0-.712-.288T5 14v-1.5q0-.425.288-.712T6 11.5h2v-1H5.75q-.325 0-.537-.213T5 9.75q0-.325.213-.537T5.75 9H8.5q.425 0 .713.288T9.5 10v1.5q0 .425-.288.713T8.5 12.5h-2zM4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h3V3q0-.425.288-.712T8 2q.425 0 .713.288T9 3v1h6V3q0-.425.288-.712T16 2q.425 0 .713.288T17 3v1h3q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm0-2h7.25v-.75q0-.325.213-.537T12 16.5q.325 0 .538.213t.212.537V18H20V6h-7.25v.75q0 .325-.213.538T12 7.5q-.325 0-.537-.213t-.213-.537V6H4zm0 0V6zm8-7q-.325 0-.537-.213t-.213-.537q0-.325.213-.537T12 9.5q.325 0 .538.213t.212.537q0 .325-.213.538T12 11m0 3.5q-.325 0-.537-.213t-.213-.537q0-.325.213-.537T12 13q.325 0 .538.213t.212.537q0 .325-.213.538T12 14.5" /></svg>
+                            <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2h7v2.13c-1.76.46-3 2.05-3 3.87a4.01 4.01 0 0 0 3 3.87V18H4v-2h3V8H4zm9 0h7v2h-3v8h3v2h-7v-2.13c1.76-.46 3-2.05 3-3.87a4.01 4.01 0 0 0-3-3.87zm-9 4h1v4H4zm15 0h1v4h-1zm-6 .27c.62.36 1 1.02 1 1.73s-.38 1.37-1 1.73zm-2 0v3.46c-.62-.36-1-1.02-1-1.73s.38-1.37 1-1.73" /></svg>
                             <span id="liveMatchLabel">En vivo</span>
                         </Link>
-                    </li>
+                    </li> */}
 
 
                     {/* Next Match option */}
                     <li id="nextMatchOption">
                         <Link to={'/next-match' + appendParams} className="w-full flex space-x-4">
-                            <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2h7v2.13c-1.76.46-3 2.05-3 3.87a4.01 4.01 0 0 0 3 3.87V18H4v-2h3V8H4zm9 0h7v2h-3v8h3v2h-7v-2.13c1.76-.46 3-2.05 3-3.87a4.01 4.01 0 0 0-3-3.87zm-9 4h1v4H4zm15 0h1v4h-1zm-6 .27c.62.36 1 1.02 1 1.73s-.38 1.37-1 1.73zm-2 0v3.46c-.62-.36-1-1.02-1-1.73s.38-1.37 1-1.73" /></svg>
+                            <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.76 3.7L2.14 4.88L4.43 8a8.23 8.23 0 0 1 1.92-.72M11 9v2h7v.29l-5 1.42v2.79A4.5 4.5 0 1 1 8.5 11H9V9h-.5a6.5 6.5 0 1 0 6.5 6.5v-1.59L22 12V9m-5.76-5.3L13.85 7h2.47l1.54-2.12M9 2v5h2V2Z" /></svg>
                             <span id="nextMatchLabel">Próximo Partido</span>
                         </Link>
                     </li>
@@ -74,7 +74,7 @@ const SideBar = () => {
                     {/* Last Match option */}
                     <li id="lastMatchOption">
                         <Link to={'/last-match' + appendParams} className="w-full flex space-x-4">
-                            <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.76 3.7L2.14 4.88L4.43 8a8.23 8.23 0 0 1 1.92-.72M11 9v2h7v.29l-5 1.42v2.79A4.5 4.5 0 1 1 8.5 11H9V9h-.5a6.5 6.5 0 1 0 6.5 6.5v-1.59L22 12V9m-5.76-5.3L13.85 7h2.47l1.54-2.12M9 2v5h2V2Z" /></svg>
+                            <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 15q-.425 0-.712-.288T14.5 14v-4q0-.425.288-.712T15.5 9H18q.425 0 .713.288T19 10v4q0 .425-.288.713T18 15zm.5-1.5h1.5v-3H16zm-9.5 0h2.25q.325 0 .538.213t.212.537q0 .325-.213.538T8.75 15H6q-.425 0-.712-.288T5 14v-1.5q0-.425.288-.712T6 11.5h2v-1H5.75q-.325 0-.537-.213T5 9.75q0-.325.213-.537T5.75 9H8.5q.425 0 .713.288T9.5 10v1.5q0 .425-.288.713T8.5 12.5h-2zM4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h3V3q0-.425.288-.712T8 2q.425 0 .713.288T9 3v1h6V3q0-.425.288-.712T16 2q.425 0 .713.288T17 3v1h3q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm0-2h7.25v-.75q0-.325.213-.537T12 16.5q.325 0 .538.213t.212.537V18H20V6h-7.25v.75q0 .325-.213.538T12 7.5q-.325 0-.537-.213t-.213-.537V6H4zm0 0V6zm8-7q-.325 0-.537-.213t-.213-.537q0-.325.213-.537T12 9.5q.325 0 .538.213t.212.537q0 .325-.213.538T12 11m0 3.5q-.325 0-.537-.213t-.213-.537q0-.325.213-.537T12 13q.325 0 .538.213t.212.537q0 .325-.213.538T12 14.5" /></svg>
                             <span id="lastMatchLabel">Último Partido</span>
                         </Link>
                     </li>
@@ -90,7 +90,7 @@ const SideBar = () => {
                     {/* Standings option */}
                     <li id="standingOption" >
                         <Link to={'/' + appendParams} className="w-full flex space-x-4">
-                            <svg className="w-10 sm:w-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 11L13 7.5l1.4-1.4l2.1 2.1L20.7 4l1.4 1.4zM11 7H2v2h9zm10 6.4L19.6 12L17 14.6L14.4 12L13 13.4l2.6 2.6l-2.6 2.6l1.4 1.4l2.6-2.6l2.6 2.6l1.4-1.4l-2.6-2.6zM11 15H2v2h9z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" className="w-10 sm:w-7 stroke-gray-600"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
                             <span id="calendarLabel">Tabla de posiciones</span>
                         </Link>
                     </li>

@@ -31,7 +31,7 @@ export class FixtureService extends ApiFootballService {
      * Obtiene la información del último partido de un equipo
      * @returns {Promise<IInfoMatchItem>} - Una promesa que se resuelve con la información del partido.
      */
-    public async getPreviousMatch(teamId: number): Promise<IFixtureResponse | undefined> {
+    public async getLastMatch(teamId: number): Promise<IFixtureResponse | undefined> {
         try {
             const endpoint = `fixtures?team=${teamId}&last=1`;
             const data: any = await this.makeRequest(endpoint);
@@ -41,7 +41,7 @@ export class FixtureService extends ApiFootballService {
             console.error(`Error fetching past match for team ${teamId}:`, error);
             return undefined;
         }
-    } // end getPreviousMatch
+    } // end getLastMatch
 
     /**
      * Obtiene la información de todos los partidos de un equipo
