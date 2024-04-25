@@ -5,7 +5,7 @@ import SideBar from "./components/common/SideBar";
 import FooterNextGame from "./components/common/FooterNextGame";
 import HeroSection from "./components/HeroSection";
 import NextMatch from "./pages/NextMatch";
-import PreviousMatch from "./pages/PreviousMatch";
+import LastMatch from "./pages/LastMatch";
 import FixtureTeam from "./pages/FixtureTeam";
 import MatchDetail from "./pages/MatchDetail";
 import bgApp from '../src/assets/bgApp.jpg';
@@ -43,7 +43,7 @@ const App = () => {
 
           {/* Ruta para la información del partido */}
           <Route path="/next-match" element={<NextMatch />} />
-          <Route path="/last-match" element={<PreviousMatch />} />
+          <Route path="/last-match" element={<LastMatch />} />
           <Route path="/fixture-team" element={<FixtureTeam />} />
           <Route path="/detail-match" element={<MatchDetail />} />
           {/*  <Route path="/standings" element={<StandingsDetail />} /> */}
