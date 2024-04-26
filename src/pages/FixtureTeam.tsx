@@ -10,13 +10,14 @@ import { Global } from "../utils/Global";
 import { TypesStatusFixturesShort } from "../utils/TypesStatusFixtures";
 
 let hasFetchedData: boolean = false;
-let formTemp = "";
 
 const FixtureTeam = () => {
 
     let componentResult = null;
     const [FixtureTeamData, setFixtureTeamData] = useState<IFixtureResponse[] | undefined>(undefined);
     const [TeamInformationData, setTeamInformationData] = useState<ITeamsInformationResponse | undefined>(undefined);
+    const [SummaryLastMatchs, setSummaryLastMatchs] = useState<string>('');
+
     const [error, setError] = useState<string | null>(null); // Estado para manejar errores
     const [loading, setLoading] = useState(true); // Estado para indicar si la solicitud está en curso
 
@@ -30,7 +31,6 @@ const FixtureTeam = () => {
     const normalizedTeamId: number = Number(teamId) || Global.NACIONAL_ID_API_FOOTBALL;
 
     // Resumen de los resultados de los ultimos cinco partidos
-
     useEffect(() => {
         const callAsync = async () => {
             try {
@@ -44,21 +44,29 @@ const FixtureTeam = () => {
                 // Ordenar la información de respuesta con respecto a la fecha
                 fixtureData?.sort((a, b) => new Date(a.fixture.date).getTime() - new Date(b.fixture.date).getTime());
 
-                //Calcular status de los ultimos 5 partidos de Nacional
-                const temp = fixtureData?.filter(match => match.fixture.status.short === TypesStatusFixturesShort.MatchFinished).reverse();
+                //TODO: Revisar si lo puedo colocar en un Hook
+                if (fixtureData) {
+                    const matchFinished = fixtureData.filter(match => match.fixture.status.short === TypesStatusFixturesShort.MatchFinished).slice(-5);
+                    let summary = '';
 
-                if (temp) {
-                    for (let index = 0; index < 5; index++) {
-                        if (temp[index].teams.home.winner === null && temp[index].teams.away.winner === null) {
-                            formTemp = 'E' + formTemp;
-                        } else if (temp[index].teams.home.id === Number(normalizedTeamId) && temp[index].teams.home.winner) {
-                            formTemp = 'V' + formTemp;
-                        } else if (temp[index].teams.away.id === Number(normalizedTeamId) && temp[index].teams.away.winner) {
-                            formTemp = 'V' + formTemp;
+                    matchFinished.forEach(match => {
+                        const homeTeamId = match.teams.home.id;
+                        const awayTeamId = match.teams.away.id;
+                        const homeTeamWinner = match.teams.home.winner;
+                        const awayTeamWinner = match.teams.away.winner;
+
+                        if (homeTeamWinner === null && awayTeamWinner === null) {
+                            summary += 'E';
+                        } else if (homeTeamWinner === true && homeTeamId === normalizedTeamId) {
+                            summary += 'V';
+                        } else if (awayTeamWinner === true && awayTeamId === normalizedTeamId) {
+                            summary += 'V';
                         } else {
-                            formTemp = 'D' + formTemp;
+                            summary += 'D';
                         }
-                    }
+                    });
+
+                    setSummaryLastMatchs(summary);
                 }
 
                 setFixtureTeamData(fixtureData);
@@ -85,9 +93,9 @@ const FixtureTeam = () => {
         componentResult = <MessageCard titleMsj='Sin información disponble' descMsj='Por favor vuelva a intentarlo más tarde' />
     } else
 
-        if (TeamInformationData && FixtureTeamData && formTemp) {
+        if (TeamInformationData && FixtureTeamData) {
             componentResult = <>
-                <TeamDetail teamData={TeamInformationData} formTeam={formTemp} />
+                <TeamDetail teamData={TeamInformationData} formTeam={SummaryLastMatchs} />
                 <div id="matchSummaryContainer" className="flex justify-center">
                     <div className="space-y-5 w-11/12 ml-8 sm:ml-0 sm:w-full ">
                         {FixtureTeamData &&
