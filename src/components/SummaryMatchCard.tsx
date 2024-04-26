@@ -8,10 +8,10 @@ import { TypesStatusFixturesShort } from "../utils/TypesStatusFixtures";
 
 const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
     return (
-        <div className='w-full bg-gray-100 flex flex-row text-center items-center m-auto' >
+        <div className='w-full bg-gray-100 flex flex-row text-center items-center m-auto cursor-pointer' >
             <div className='w-[60px] text-center bg-green-400 -ml-8'>
                 <div>
-                    <p className='text-xl font-extralight'>
+                    <p className='text-xl font-light'>
                         <span>{format(new Date(matchData.fixture.date), 'dd')}</span>
                     </p>
                 </div>
@@ -35,7 +35,7 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
                 <div className="flex items-center">
                     {/* Result/Time/Info */}
                     <div className="flex w-2/5 justify-end items-center mr-2 space-x-1">
-                        <span className={`text-sm text-right leading-[16px] ${matchData.teams.home.id === Global.NACIONAL_ID_API_FOOTBALL ? 'font-normal' : 'font-extralight'}`}>{matchData.teams.home.name}</span>
+                        <span className={`text-sm text-right leading-[16px] ${matchData.teams.home.id === Global.NACIONAL_ID_API_FOOTBALL ? 'font-normal ' : 'font-light'}`}>{matchData.teams.home.name}</span>
                         <img src={matchData.teams.home.logo} alt={matchData.teams.home.name} className='h-8' />
                     </div>
                     <div className="w-1/5 items-center">
@@ -67,12 +67,13 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
                             <span className='text-xs font-light not-italic leading-[16px] bg-red-200 h-full'>
                                 {`Sin horario`}
                             </span>
+
                         }
                     </div>
                     {/* Team Away Information */}
                     <div className="flex w-2/5 justify-start items-center ml-2 space-x-1">
                         <img src={matchData.teams.away.logo} alt={matchData.teams.away.name} className='h-8' />
-                        <span className={`text-sm text-left leading-[16px] ${matchData.teams.away.id === Global.NACIONAL_ID_API_FOOTBALL ? 'font-normal' : 'font-extralight'} `}>{matchData.teams.away.name}</span>
+                        <span className={`text-sm text-left leading-[16px] ${matchData.teams.away.id === Global.NACIONAL_ID_API_FOOTBALL ? 'font-normal ' : 'font-light'} `}>{matchData.teams.away.name}</span>
                     </div>
                 </div>
             </Link >

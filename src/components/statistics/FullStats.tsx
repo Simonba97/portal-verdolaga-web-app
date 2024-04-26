@@ -51,71 +51,71 @@ const FullStats = ({ matchStats, isLoading, error }: { matchStats: IStatisticsIn
         <div>
             {/* <div className='max-w-fit text-center m-auto bg-green-400 px-3 relative top-3'>
                 <div>
-                    <p className='text-xl font-normal italic text-white'>
+                    <p className='text-xl -white'>
                         <span>Estadísticas</span>
                     </p>
                 </div>
             </div> */}
-            <div className='w-full bg-gray-100 px-1 py-2 text-center justify-center' >
-                <div className='flex flex-row border-b py-0.5'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.BallPossession] ? homeTeamStats[TypesStatistics.BallPossession] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.BallPossession}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.BallPossession] ? awayTeamStats[TypesStatistics.BallPossession] : 0}</div>
+            <div className='w-full bg-gray-100 px-1 py-2 text-center justify-center text-gray-800' >
+                <div className='flex flex-row border-b'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.BallPossession] ? homeTeamStats[TypesStatistics.BallPossession] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.BallPossession}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.BallPossession] ? awayTeamStats[TypesStatistics.BallPossession] : 0}</span></div>
                 </div>
-                <div className='flex flex-row border-b py-1'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.TotalShots] ? homeTeamStats[TypesStatistics.TotalShots] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.TotalShots}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.TotalShots] ? awayTeamStats[TypesStatistics.TotalShots] : 0}</div>
+                <div className='flex flex-row border-b'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.TotalShots] ? homeTeamStats[TypesStatistics.TotalShots] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.TotalShots}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.TotalShots] ? awayTeamStats[TypesStatistics.TotalShots] : 0}</span></div>
                 </div>
-                <div className='flex flex-row border-b py-1'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.ShotsOnGoal] ? homeTeamStats[TypesStatistics.ShotsOnGoal] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.ShotsOnGoal}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.ShotsOnGoal] ? awayTeamStats[TypesStatistics.ShotsOnGoal] : 0}</div>
+                <div className='flex flex-row border-b'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.ShotsOnGoal] ? homeTeamStats[TypesStatistics.ShotsOnGoal] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.ShotsOnGoal}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.ShotsOnGoal] ? awayTeamStats[TypesStatistics.ShotsOnGoal] : 0}</span></div>
                 </div>
-                <div className='flex flex-row border-b py-1'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.ShotsOffGoal] ? homeTeamStats[TypesStatistics.ShotsOffGoal] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.ShotsOffGoal}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.ShotsOffGoal] ? awayTeamStats[TypesStatistics.ShotsOffGoal] : 0}</div>
+                <div className='flex flex-row border-b'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.ShotsOffGoal] ? homeTeamStats[TypesStatistics.ShotsOffGoal] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.ShotsOffGoal}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.ShotsOffGoal] ? awayTeamStats[TypesStatistics.ShotsOffGoal] : 0}</span></div>
                 </div>
-                <div className='flex flex-row border-b py-1'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.Fouls] ? homeTeamStats[TypesStatistics.Fouls] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.Fouls}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.Fouls] ? awayTeamStats[TypesStatistics.Fouls] : 0}</div>
+                <div className='flex flex-row border-b'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.Fouls] ? homeTeamStats[TypesStatistics.Fouls] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.Fouls}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.Fouls] ? awayTeamStats[TypesStatistics.Fouls] : 0}</span></div>
                 </div>
-                <div className='flex flex-row border-b py-1'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.CornerKicks] ? homeTeamStats[TypesStatistics.CornerKicks] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.CornerKicks}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.CornerKicks] ? awayTeamStats[TypesStatistics.CornerKicks] : 0}</div>
+                <div className='flex flex-row border-b'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.CornerKicks] ? homeTeamStats[TypesStatistics.CornerKicks] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.CornerKicks}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.CornerKicks] ? awayTeamStats[TypesStatistics.CornerKicks] : 0}</span></div>
                 </div>
-                <div className='flex flex-row border-b py-1'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.Offsides] ? homeTeamStats[TypesStatistics.Offsides] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.Offsides}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.Offsides] ? awayTeamStats[TypesStatistics.Offsides] : 0}</div>
+                <div className='flex flex-row border-b'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.Offsides] ? homeTeamStats[TypesStatistics.Offsides] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.Offsides}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.Offsides] ? awayTeamStats[TypesStatistics.Offsides] : 0}</span></div>
                 </div>
-                <div className='flex flex-row border-b py-1'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.YellowCards] ? homeTeamStats[TypesStatistics.YellowCards] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.YellowCards}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.YellowCards] ? awayTeamStats[TypesStatistics.YellowCards] : 0}</div>
+                <div className='flex flex-row border-b'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.YellowCards] ? homeTeamStats[TypesStatistics.YellowCards] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.YellowCards}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.YellowCards] ? awayTeamStats[TypesStatistics.YellowCards] : 0}</span></div>
                 </div>
-                <div className='flex flex-row border-b py-1'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.RedCards] ? homeTeamStats[TypesStatistics.RedCards] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.RedCards}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.RedCards] ? awayTeamStats[TypesStatistics.RedCards] : 0}</div>
+                <div className='flex flex-row border-b'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.RedCards] ? homeTeamStats[TypesStatistics.RedCards] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.RedCards}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.RedCards] ? awayTeamStats[TypesStatistics.RedCards] : 0}</span></div>
                 </div>
-                <div className='flex flex-row border-b py-1'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.TotalPasses] ? homeTeamStats[TypesStatistics.TotalPasses] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.TotalPasses}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.TotalPasses] ? awayTeamStats[TypesStatistics.TotalPasses] : 0}</div>
+                <div className='flex flex-row border-b'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.TotalPasses] ? homeTeamStats[TypesStatistics.TotalPasses] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.TotalPasses}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.TotalPasses] ? awayTeamStats[TypesStatistics.TotalPasses] : 0}</span></div>
                 </div>
-                <div className='flex flex-row border-b py-1'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.PassesAccurate] ? homeTeamStats[TypesStatistics.PassesAccurate] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.PassesAccurate}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.PassesAccurate] ? awayTeamStats[TypesStatistics.PassesAccurate] : 0}</div>
+                <div className='flex flex-row border-b'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.PassesAccurate] ? homeTeamStats[TypesStatistics.PassesAccurate] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.PassesAccurate}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.PassesAccurate] ? awayTeamStats[TypesStatistics.PassesAccurate] : 0}</span></div>
                 </div>
-                <div className='flex flex-row border-b py-1'>
-                    <div className='w-1/4'><span>{homeTeamStats[TypesStatistics.PassesPercentage] ? homeTeamStats[TypesStatistics.PassesPercentage] : 0}</span></div>
-                    <div className='w-1/2'><span className='font-extralight'>{TypesStatisticsES.PassesPercentage}</span></div>
-                    <div className='w-1/4'>{awayTeamStats[TypesStatistics.PassesPercentage] ? awayTeamStats[TypesStatistics.PassesPercentage] : 0}</div>
+                <div className='flex flex-row'>
+                    <div className='w-1/4'><span className=''>{homeTeamStats[TypesStatistics.PassesPercentage] ? homeTeamStats[TypesStatistics.PassesPercentage] : 0}</span></div>
+                    <div className='w-1/2'><span className=''>{TypesStatisticsES.PassesPercentage}</span></div>
+                    <div className='w-1/4'><span className=''>{awayTeamStats[TypesStatistics.PassesPercentage] ? awayTeamStats[TypesStatistics.PassesPercentage] : 0}</span></div>
                 </div>
             </div>
         </div>
