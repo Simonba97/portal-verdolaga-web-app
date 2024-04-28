@@ -1,0 +1,1191 @@
+[
+    {
+        "predictions": {
+            "winner": {
+                "id": 1137,
+                "name": "Atletico Nacional",
+                "comment": "Win or draw"
+            },
+            "win_or_draw": true,
+            "under_over": null,
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "advice": "Double chance : Atletico Nacional or draw",
+            "percent": {
+                "home": "50%",
+                "draw": "50%",
+                "away": "0%"
+            }
+        },
+        "league": {
+            "id": 239,
+            "name": "Primera A",
+            "country": "Colombia",
+            "logo": "https://media.api-sports.io/football/leagues/239.png",
+            "flag": "https://media.api-sports.io/flags/co.svg",
+            "season": 2024
+        },
+        "teams": {
+            "home": {
+                "id": 1137,
+                "name": "Atletico Nacional",
+                "logo": "https://media.api-sports.io/football/teams/1137.png",
+                "last_5": {
+                    "played": 0,
+                    "form": "0%",
+                    "att": "0%",
+                    "def": "0%",
+                    "goals": {
+                        "for": {
+                            "total": 0,
+                            "average": "0.0"
+                        },
+                        "against": {
+                            "total": 0,
+                            "average": "0.0"
+                        }
+                    }
+                },
+                "league": {
+                    "form": "WLDWDLLLDDLWWWLDLD",
+                    "fixtures": {
+                        "played": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        },
+                        "wins": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        },
+                        "draws": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        },
+                        "loses": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        }
+                    },
+                    "goals": {
+                        "for": {
+                            "total": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "average": {
+                                "home": "0.0",
+                                "away": "0.0",
+                                "total": "0.0"
+                            },
+                            "minute": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        },
+                        "against": {
+                            "total": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "average": {
+                                "home": "0.0",
+                                "away": "0.0",
+                                "total": "0.0"
+                            },
+                            "minute": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    },
+                    "biggest": {
+                        "streak": {
+                            "wins": 0,
+                            "draws": 0,
+                            "loses": 0
+                        },
+                        "wins": {
+                            "home": null,
+                            "away": null
+                        },
+                        "loses": {
+                            "home": null,
+                            "away": null
+                        },
+                        "goals": {
+                            "for": {
+                                "home": 0,
+                                "away": 0
+                            },
+                            "against": {
+                                "home": 0,
+                                "away": 0
+                            }
+                        }
+                    },
+                    "clean_sheet": {
+                        "home": 0,
+                        "away": 0,
+                        "total": 0
+                    },
+                    "failed_to_score": {
+                        "home": 0,
+                        "away": 0,
+                        "total": 0
+                    },
+                    "penalty": {
+                        "scored": {
+                            "total": 0,
+                            "percentage": "0%"
+                        },
+                        "missed": {
+                            "total": 0,
+                            "percentage": "0%"
+                        },
+                        "total": 0
+                    },
+                    "lineups": [],
+                    "cards": {
+                        "yellow": {
+                            "0-15": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "16-30": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "31-45": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "46-60": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "61-75": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "76-90": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "91-105": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "106-120": {
+                                "total": null,
+                                "percentage": null
+                            }
+                        },
+                        "red": {
+                            "0-15": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "16-30": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "31-45": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "46-60": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "61-75": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "76-90": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "91-105": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "106-120": {
+                                "total": null,
+                                "percentage": null
+                            }
+                        }
+                    }
+                }
+            },
+            "away": {
+                "id": 1141,
+                "name": "Alianza Petrolera",
+                "logo": "https://media.api-sports.io/football/teams/1141.png",
+                "last_5": {
+                    "played": 0,
+                    "form": "0%",
+                    "att": "0%",
+                    "def": "0%",
+                    "goals": {
+                        "for": {
+                            "total": 0,
+                            "average": "0.0"
+                        },
+                        "against": {
+                            "total": 0,
+                            "average": "0.0"
+                        }
+                    }
+                },
+                "league": {
+                    "form": "WLDWDLLLDDLWWWLDLD",
+                    "fixtures": {
+                        "played": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        },
+                        "wins": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        },
+                        "draws": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        },
+                        "loses": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        }
+                    },
+                    "goals": {
+                        "for": {
+                            "total": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "average": {
+                                "home": "0.0",
+                                "away": "0.0",
+                                "total": "0.0"
+                            },
+                            "minute": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        },
+                        "against": {
+                            "total": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "average": {
+                                "home": "0.0",
+                                "away": "0.0",
+                                "total": "0.0"
+                            },
+                            "minute": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    },
+                    "biggest": {
+                        "streak": {
+                            "wins": 0,
+                            "draws": 0,
+                            "loses": 0
+                        },
+                        "wins": {
+                            "home": null,
+                            "away": null
+                        },
+                        "loses": {
+                            "home": null,
+                            "away": null
+                        },
+                        "goals": {
+                            "for": {
+                                "home": 0,
+                                "away": 0
+                            },
+                            "against": {
+                                "home": 0,
+                                "away": 0
+                            }
+                        }
+                    },
+                    "clean_sheet": {
+                        "home": 0,
+                        "away": 0,
+                        "total": 0
+                    },
+                    "failed_to_score": {
+                        "home": 0,
+                        "away": 0,
+                        "total": 0
+                    },
+                    "penalty": {
+                        "scored": {
+                            "total": 0,
+                            "percentage": "0%"
+                        },
+                        "missed": {
+                            "total": 0,
+                            "percentage": "0%"
+                        },
+                        "total": 0
+                    },
+                    "lineups": [],
+                    "cards": {
+                        "yellow": {
+                            "0-15": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "16-30": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "31-45": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "46-60": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "61-75": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "76-90": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "91-105": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "106-120": {
+                                "total": null,
+                                "percentage": null
+                            }
+                        },
+                        "red": {
+                            "0-15": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "16-30": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "31-45": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "46-60": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "61-75": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "76-90": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "91-105": {
+                                "total": null,
+                                "percentage": null
+                            },
+                            "106-120": {
+                                "total": null,
+                                "percentage": null
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "comparison": {
+            "form": {
+                "home": "0%",
+                "away": "0%"
+            },
+            "att": {
+                "home": "0%",
+                "away": "0%"
+            },
+            "def": {
+                "home": "0%",
+                "away": "0%"
+            },
+            "poisson_distribution": {
+                "home": "0%",
+                "away": "0%"
+            },
+            "h2h": {
+                "home": "62%",
+                "away": "38%"
+            },
+            "goals": {
+                "home": "67%",
+                "away": "33%"
+            },
+            "total": {
+                "home": "64.5%",
+                "away": "35.5%"
+            }
+        },
+        "h2h": [
+            {
+                "fixture": {
+                    "id": 990493,
+                    "referee": "C. Ortega",
+                    "timezone": "UTC",
+                    "date": "2023-10-27T01:20:00+00:00",
+                    "timestamp": 1698369600,
+                    "periods": {
+                        "first": 1698369600,
+                        "second": 1698373200
+                    },
+                    "venue": {
+                        "id": 380,
+                        "name": "Estadio Atanasio Girardot",
+                        "city": "Medellín"
+                    },
+                    "status": {
+                        "long": "Match Finished",
+                        "short": "FT",
+                        "elapsed": 90
+                    }
+                },
+                "league": {
+                    "id": 239,
+                    "name": "Primera A",
+                    "country": "Colombia",
+                    "logo": "https://media.api-sports.io/football/leagues/239.png",
+                    "flag": "https://media.api-sports.io/flags/co.svg",
+                    "season": 2023,
+                    "round": "Clausura - 19"
+                },
+                "teams": {
+                    "home": {
+                        "id": 1137,
+                        "name": "Atletico Nacional",
+                        "logo": "https://media.api-sports.io/football/teams/1137.png",
+                        "winner": true
+                    },
+                    "away": {
+                        "id": 1141,
+                        "name": "Alianza Petrolera",
+                        "logo": "https://media.api-sports.io/football/teams/1141.png",
+                        "winner": false
+                    }
+                },
+                "goals": {
+                    "home": 2,
+                    "away": 0
+                },
+                "score": {
+                    "halftime": {
+                        "home": 1,
+                        "away": 0
+                    },
+                    "fulltime": {
+                        "home": 2,
+                        "away": 0
+                    },
+                    "extratime": {
+                        "home": null,
+                        "away": null
+                    },
+                    "penalty": {
+                        "home": null,
+                        "away": null
+                    }
+                }
+            },
+            {
+                "fixture": {
+                    "id": 1027981,
+                    "referee": "C. Betancur",
+                    "timezone": "UTC",
+                    "date": "2023-06-13T00:30:00+00:00",
+                    "timestamp": 1686616200,
+                    "periods": {
+                        "first": 1686616200,
+                        "second": 1686619800
+                    },
+                    "venue": {
+                        "id": 367,
+                        "name": "Estadio Daniel Villa Zapata",
+                        "city": "Barrancabermeja"
+                    },
+                    "status": {
+                        "long": "Match Finished",
+                        "short": "FT",
+                        "elapsed": 90
+                    }
+                },
+                "league": {
+                    "id": 239,
+                    "name": "Primera A",
+                    "country": "Colombia",
+                    "logo": "https://media.api-sports.io/football/leagues/239.png",
+                    "flag": "https://media.api-sports.io/flags/co.svg",
+                    "season": 2023,
+                    "round": "Apertura - Quadrangular - 5"
+                },
+                "teams": {
+                    "home": {
+                        "id": 1141,
+                        "name": "Alianza Petrolera",
+                        "logo": "https://media.api-sports.io/football/teams/1141.png",
+                        "winner": null
+                    },
+                    "away": {
+                        "id": 1137,
+                        "name": "Atletico Nacional",
+                        "logo": "https://media.api-sports.io/football/teams/1137.png",
+                        "winner": null
+                    }
+                },
+                "goals": {
+                    "home": 0,
+                    "away": 0
+                },
+                "score": {
+                    "halftime": {
+                        "home": 0,
+                        "away": 0
+                    },
+                    "fulltime": {
+                        "home": 0,
+                        "away": 0
+                    },
+                    "extratime": {
+                        "home": null,
+                        "away": null
+                    },
+                    "penalty": {
+                        "home": null,
+                        "away": null
+                    }
+                }
+            },
+            {
+                "fixture": {
+                    "id": 1027969,
+                    "referee": "C. Ortega",
+                    "timezone": "UTC",
+                    "date": "2023-05-28T23:05:00+00:00",
+                    "timestamp": 1685315100,
+                    "periods": {
+                        "first": 1685315100,
+                        "second": 1685318700
+                    },
+                    "venue": {
+                        "id": 380,
+                        "name": "Estadio Atanasio Girardot",
+                        "city": "Medellín"
+                    },
+                    "status": {
+                        "long": "Match Finished",
+                        "short": "FT",
+                        "elapsed": 90
+                    }
+                },
+                "league": {
+                    "id": 239,
+                    "name": "Primera A",
+                    "country": "Colombia",
+                    "logo": "https://media.api-sports.io/football/leagues/239.png",
+                    "flag": "https://media.api-sports.io/flags/co.svg",
+                    "season": 2023,
+                    "round": "Apertura - Quadrangular - 2"
+                },
+                "teams": {
+                    "home": {
+                        "id": 1137,
+                        "name": "Atletico Nacional",
+                        "logo": "https://media.api-sports.io/football/teams/1137.png",
+                        "winner": null
+                    },
+                    "away": {
+                        "id": 1141,
+                        "name": "Alianza Petrolera",
+                        "logo": "https://media.api-sports.io/football/teams/1141.png",
+                        "winner": null
+                    }
+                },
+                "goals": {
+                    "home": 1,
+                    "away": 1
+                },
+                "score": {
+                    "halftime": {
+                        "home": 1,
+                        "away": 1
+                    },
+                    "fulltime": {
+                        "home": 1,
+                        "away": 1
+                    },
+                    "extratime": {
+                        "home": null,
+                        "away": null
+                    },
+                    "penalty": {
+                        "home": null,
+                        "away": null
+                    }
+                }
+            },
+            {
+                "fixture": {
+                    "id": 989460,
+                    "referee": "L. Suárez",
+                    "timezone": "UTC",
+                    "date": "2023-05-15T23:20:00+00:00",
+                    "timestamp": 1684192800,
+                    "periods": {
+                        "first": 1684192800,
+                        "second": 1684196400
+                    },
+                    "venue": {
+                        "id": 367,
+                        "name": "Estadio Daniel Villa Zapata",
+                        "city": "Barrancabermeja"
+                    },
+                    "status": {
+                        "long": "Match Finished",
+                        "short": "FT",
+                        "elapsed": 90
+                    }
+                },
+                "league": {
+                    "id": 239,
+                    "name": "Primera A",
+                    "country": "Colombia",
+                    "logo": "https://media.api-sports.io/football/leagues/239.png",
+                    "flag": "https://media.api-sports.io/flags/co.svg",
+                    "season": 2023,
+                    "round": "Apertura - 19"
+                },
+                "teams": {
+                    "home": {
+                        "id": 1141,
+                        "name": "Alianza Petrolera",
+                        "logo": "https://media.api-sports.io/football/teams/1141.png",
+                        "winner": true
+                    },
+                    "away": {
+                        "id": 1137,
+                        "name": "Atletico Nacional",
+                        "logo": "https://media.api-sports.io/football/teams/1137.png",
+                        "winner": false
+                    }
+                },
+                "goals": {
+                    "home": 2,
+                    "away": 1
+                },
+                "score": {
+                    "halftime": {
+                        "home": 1,
+                        "away": 1
+                    },
+                    "fulltime": {
+                        "home": 2,
+                        "away": 1
+                    },
+                    "extratime": {
+                        "home": null,
+                        "away": null
+                    },
+                    "penalty": {
+                        "home": null,
+                        "away": null
+                    }
+                }
+            },
+            {
+                "fixture": {
+                    "id": 822966,
+                    "referee": "J. Hinestroza",
+                    "timezone": "UTC",
+                    "date": "2022-08-07T23:10:00+00:00",
+                    "timestamp": 1659913800,
+                    "periods": {
+                        "first": 1659913800,
+                        "second": 1659917400
+                    },
+                    "venue": {
+                        "id": 367,
+                        "name": "Estadio Daniel Villa Zapata",
+                        "city": "Barrancabermeja"
+                    },
+                    "status": {
+                        "long": "Match Finished",
+                        "short": "FT",
+                        "elapsed": 90
+                    }
+                },
+                "league": {
+                    "id": 239,
+                    "name": "Primera A",
+                    "country": "Colombia",
+                    "logo": "https://media.api-sports.io/football/leagues/239.png",
+                    "flag": "https://media.api-sports.io/flags/co.svg",
+                    "season": 2022,
+                    "round": "Clausura - 6"
+                },
+                "teams": {
+                    "home": {
+                        "id": 1141,
+                        "name": "Alianza Petrolera",
+                        "logo": "https://media.api-sports.io/football/teams/1141.png",
+                        "winner": false
+                    },
+                    "away": {
+                        "id": 1137,
+                        "name": "Atletico Nacional",
+                        "logo": "https://media.api-sports.io/football/teams/1137.png",
+                        "winner": true
+                    }
+                },
+                "goals": {
+                    "home": 0,
+                    "away": 2
+                },
+                "score": {
+                    "halftime": {
+                        "home": 0,
+                        "away": 0
+                    },
+                    "fulltime": {
+                        "home": 0,
+                        "away": 2
+                    },
+                    "extratime": {
+                        "home": null,
+                        "away": null
+                    },
+                    "penalty": {
+                        "home": null,
+                        "away": null
+                    }
+                }
+            },
+            {
+                "fixture": {
+                    "id": 823166,
+                    "referee": "L. Matorel",
+                    "timezone": "UTC",
+                    "date": "2022-02-12T01:10:00+00:00",
+                    "timestamp": 1644628200,
+                    "periods": {
+                        "first": 1644628200,
+                        "second": 1644631800
+                    },
+                    "venue": {
+                        "id": 380,
+                        "name": "Estadio Atanasio Girardot",
+                        "city": "Medellín"
+                    },
+                    "status": {
+                        "long": "Match Finished",
+                        "short": "FT",
+                        "elapsed": 90
+                    }
+                },
+                "league": {
+                    "id": 239,
+                    "name": "Primera A",
+                    "country": "Colombia",
+                    "logo": "https://media.api-sports.io/football/leagues/239.png",
+                    "flag": "https://media.api-sports.io/flags/co.svg",
+                    "season": 2022,
+                    "round": "Apertura - 6"
+                },
+                "teams": {
+                    "home": {
+                        "id": 1137,
+                        "name": "Atletico Nacional",
+                        "logo": "https://media.api-sports.io/football/teams/1137.png",
+                        "winner": null
+                    },
+                    "away": {
+                        "id": 1141,
+                        "name": "Alianza Petrolera",
+                        "logo": "https://media.api-sports.io/football/teams/1141.png",
+                        "winner": null
+                    }
+                },
+                "goals": {
+                    "home": 0,
+                    "away": 0
+                },
+                "score": {
+                    "halftime": {
+                        "home": 0,
+                        "away": 0
+                    },
+                    "fulltime": {
+                        "home": 0,
+                        "away": 0
+                    },
+                    "extratime": {
+                        "home": null,
+                        "away": null
+                    },
+                    "penalty": {
+                        "home": null,
+                        "away": null
+                    }
+                }
+            },
+            {
+                "fixture": {
+                    "id": 728871,
+                    "referee": "B. Santiago",
+                    "timezone": "UTC",
+                    "date": "2021-09-06T01:10:00+00:00",
+                    "timestamp": 1630890600,
+                    "periods": {
+                        "first": 1630890600,
+                        "second": 1630894200
+                    },
+                    "venue": {
+                        "id": 367,
+                        "name": "Estadio Daniel Villa Zapata",
+                        "city": "Barrancabermeja"
+                    },
+                    "status": {
+                        "long": "Match Finished",
+                        "short": "FT",
+                        "elapsed": 90
+                    }
+                },
+                "league": {
+                    "id": 239,
+                    "name": "Primera A",
+                    "country": "Colombia",
+                    "logo": "https://media.api-sports.io/football/leagues/239.png",
+                    "flag": "https://media.api-sports.io/flags/co.svg",
+                    "season": 2021,
+                    "round": "Clausura - 8"
+                },
+                "teams": {
+                    "home": {
+                        "id": 1141,
+                        "name": "Alianza Petrolera",
+                        "logo": "https://media.api-sports.io/football/teams/1141.png",
+                        "winner": false
+                    },
+                    "away": {
+                        "id": 1137,
+                        "name": "Atletico Nacional",
+                        "logo": "https://media.api-sports.io/football/teams/1137.png",
+                        "winner": true
+                    }
+                },
+                "goals": {
+                    "home": 1,
+                    "away": 3
+                },
+                "score": {
+                    "halftime": {
+                        "home": 0,
+                        "away": 1
+                    },
+                    "fulltime": {
+                        "home": 1,
+                        "away": 3
+                    },
+                    "extratime": {
+                        "home": null,
+                        "away": null
+                    },
+                    "penalty": {
+                        "home": null,
+                        "away": null
+                    }
+                }
+            },
+            {
+                "fixture": {
+                    "id": 656295,
+                    "referee": "F. Trujillo",
+                    "timezone": "UTC",
+                    "date": "2021-03-03T01:00:00+00:00",
+                    "timestamp": 1614733200,
+                    "periods": {
+                        "first": 1614733200,
+                        "second": 1614736800
+                    },
+                    "venue": {
+                        "id": 380,
+                        "name": "Estadio Atanasio Girardot",
+                        "city": "Medellín"
+                    },
+                    "status": {
+                        "long": "Match Finished",
+                        "short": "FT",
+                        "elapsed": 90
+                    }
+                },
+                "league": {
+                    "id": 239,
+                    "name": "Primera A",
+                    "country": "Colombia",
+                    "logo": "https://media.api-sports.io/football/leagues/239.png",
+                    "flag": "https://media.api-sports.io/flags/co.svg",
+                    "season": 2021,
+                    "round": "Apertura - 10"
+                },
+                "teams": {
+                    "home": {
+                        "id": 1137,
+                        "name": "Atletico Nacional",
+                        "logo": "https://media.api-sports.io/football/teams/1137.png",
+                        "winner": true
+                    },
+                    "away": {
+                        "id": 1141,
+                        "name": "Alianza Petrolera",
+                        "logo": "https://media.api-sports.io/football/teams/1141.png",
+                        "winner": false
+                    }
+                },
+                "goals": {
+                    "home": 5,
+                    "away": 0
+                },
+                "score": {
+                    "halftime": {
+                        "home": 2,
+                        "away": 0
+                    },
+                    "fulltime": {
+                        "home": 5,
+                        "away": 0
+                    },
+                    "extratime": {
+                        "home": null,
+                        "away": null
+                    },
+                    "penalty": {
+                        "home": null,
+                        "away": null
+                    }
+                }
+            },
+            {
+                "fixture": {
+                    "id": 314267,
+                    "referee": "É. Vergara",
+                    "timezone": "UTC",
+                    "date": "2020-11-12T01:10:00+00:00",
+                    "timestamp": 1605143400,
+                    "periods": {
+                        "first": 1605143400,
+                        "second": 1605147000
+                    },
+                    "venue": {
+                        "id": 367,
+                        "name": "Estadio Daniel Villa Zapata",
+                        "city": "Barrancabermeja"
+                    },
+                    "status": {
+                        "long": "Match Finished",
+                        "short": "FT",
+                        "elapsed": 90
+                    }
+                },
+                "league": {
+                    "id": 239,
+                    "name": "Primera A",
+                    "country": "Colombia",
+                    "logo": "https://media.api-sports.io/football/leagues/239.png",
+                    "flag": "https://media.api-sports.io/flags/co.svg",
+                    "season": 2020,
+                    "round": "Regular Season - 19"
+                },
+                "teams": {
+                    "home": {
+                        "id": 1141,
+                        "name": "Alianza Petrolera",
+                        "logo": "https://media.api-sports.io/football/teams/1141.png",
+                        "winner": false
+                    },
+                    "away": {
+                        "id": 1137,
+                        "name": "Atletico Nacional",
+                        "logo": "https://media.api-sports.io/football/teams/1137.png",
+                        "winner": true
+                    }
+                },
+                "goals": {
+                    "home": 2,
+                    "away": 3
+                },
+                "score": {
+                    "halftime": {
+                        "home": 1,
+                        "away": 1
+                    },
+                    "fulltime": {
+                        "home": 2,
+                        "away": 3
+                    },
+                    "extratime": {
+                        "home": null,
+                        "away": null
+                    },
+                    "penalty": {
+                        "home": null,
+                        "away": null
+                    }
+                }
+            }
+        ]
+    }
+]

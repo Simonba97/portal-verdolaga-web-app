@@ -8,6 +8,11 @@ import { StandingsService } from '../services/StandingsService';
 import FullStandings from '../components/statistics/FullStandings';
 import Tabs from '../components/common/Tabs';
 import { TypesStatusFixturesShort } from '../utils/TypesStatusFixtures';
+import { IPredictionsResponse } from '../models/IPredictionsItem';
+import { PredictionsService } from '../services/PredictionsSertice';
+import H2HCard from '../components/predictions/H2HCard';
+import HeaderCard from '../components/common/HeaderCard';
+import FormTeam from '../components/predictions/FormTeam';
 
 let hasFetchedData: boolean = false;
 
@@ -15,16 +20,17 @@ const MatchDetail = () => {
 
     const [matchData, setMatchData] = useState<IFixtureResponse | undefined>(undefined);
     const [statisticsMatchData, setStatisticsMatchData] = useState<IStatisticsInsideMatchData[]>();
-    const [standingsByLeagueData, setStandingsByLeagueData] = useState<IRowStanding[]>([])
+    const [standingsByLeagueData, setStandingsByLeagueData] = useState<IRowStanding[]>([]);
+    const [predictionsMatchData, setPredictionsMatchData] = useState<IPredictionsResponse | undefined>(undefined);
     const [error, setError] = useState<string | null>(null); // Estado para manejar errores
     const [isLoading, setIsLoading] = useState(true); // Estado para indicar si la solicitud está en curso
 
     /* Servicio relacionado para todo lo de un partido */
     const fixtureService = new FixtureService();
-
     /* Servicio relacionado para todo lo de una tabla de posiciones */
     const standingsService = new StandingsService();
-
+    /* Servicio relacionado para todas las predicciones de un partido específico */
+    const predictionsService = new PredictionsService();
 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
@@ -52,6 +58,9 @@ const MatchDetail = () => {
                             setStandingsByLeagueData(selectedLeague);
                         }
                     }
+                } else if (dataResponse && dataResponse.fixture.status.short == TypesStatusFixturesShort.NotStarted) {
+                    const predictionsResponse: IPredictionsResponse | undefined = await predictionsService.getPredictionsByMatchId(dataResponse.fixture.id);
+                    setPredictionsMatchData(predictionsResponse);
                 }
 
                 setStatisticsMatchData(dataResponse?.statistics ?? undefined);
@@ -97,6 +106,26 @@ const MatchDetail = () => {
                         ]}
                         isLoading={isLoading}
                     />
+                </section>
+            }
+            {predictionsMatchData && matchData && matchData.fixture.status.short === TypesStatusFixturesShort.NotStarted &&
+                <section className="flex flex-col items-center">
+                    <div className='w-[90%] sm:w-[415px] md:w-[415px] lg:w-w-[415px] xl:w-w-[415px] 2xl:w-[415px] uppercase'>
+                        <H2HCard h2hData={predictionsMatchData.h2h} />
+                    </div>
+                    <div className='w-[90%] sm:w-[415px] md:w-[415px] lg:w-w-[415px] xl:w-w-[415px] 2xl:w-[415px] uppercase mt-3'>
+                        <div>
+                            <HeaderCard textHeader='Últimos partidos 👇🏻' />
+                        </div>
+                        <div className='flex'>
+                            <div className='w-1/2'>
+                                <FormTeam teamInfo={predictionsMatchData.teams.home} formString={predictionsMatchData.teams.home.league.form} />
+                            </div>
+                            <div className='w-1/2'>
+                                <FormTeam teamInfo={predictionsMatchData.teams.away} formString={predictionsMatchData.teams.away.league.form} />
+                            </div>
+                        </div>
+                    </div>
                 </section>
             }
         </div>
