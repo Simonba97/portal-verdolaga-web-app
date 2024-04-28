@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import MessageCard from './MessageCard';
 import { fadeInAnimation } from '../utils/animationConstants';
 import { Link } from 'react-router-dom';
-import bgCardApp from '../../src/assets/bgCardApp.jpg'
 import { TypesStatusFixturesShort } from '../utils/TypesStatusFixtures';
 
 const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureResponse | undefined, isLoading: boolean, error: any }) => {
@@ -38,7 +37,7 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
                     </p>
                 </div>
             </div>
-            <div className='bg-center bg-cover flex flex-col text-center items-center' style={{ backgroundImage: `url(${bgCardApp})` }}>
+            <div className='flex flex-col text-center items-center bg-gray-100'>
                 <div className='pt-9 space-y-[-5px] mb-5 font-light'>
 
                     {/* Match Finished */}
