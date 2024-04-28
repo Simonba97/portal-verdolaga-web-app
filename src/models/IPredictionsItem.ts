@@ -1,8 +1,4 @@
-import { IFixture, IFixtureResponse } from "./IFixturesItem";
-import { IGoals } from "./IGoals";
-import { ILeague } from "./ILeague";
-import { IScore } from "./IScore";
-import { ITeams } from "./ITeams";
+import { IFixtureResponse } from "./IFixturesItem";
 
 export interface IPredictionsResponse {
     predictions: any;
