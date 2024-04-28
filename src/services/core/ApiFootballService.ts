@@ -3,6 +3,7 @@ import { isApiEnabled } from '../../../config/apiConfig';
 import dataTestFixture from '../../mockData/dataTestFixture.json';
 import dataTestTeam from '../../mockData/dataTestTeam.json';
 import dataTestStandings from '../../mockData/dataTestStandings.json';
+import dataTestPredictions from '../../mockData/dataTestPredictions.json';
 import { useLocation } from "react-router-dom";
 
 /**
@@ -64,6 +65,10 @@ export abstract class ApiFootballService {
                 } else if (endpoint.indexOf('standings?') != -1) {
                     return {
                         response: dataTestStandings // devolvemos la información de prueba
+                    };
+                } else if (endpoint.indexOf('predictions?') != -1) {
+                    return {
+                        response: dataTestPredictions // devolvemos la información de prueba
                     };
                 }
             }

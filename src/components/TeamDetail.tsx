@@ -25,7 +25,7 @@ const TeamDetail = ({ teamData, formTeam }: { teamData: ITeamsInformationRespons
                         </div>
                         <div id={`formTeam-${teamData.team.id}`} className='space-x-1 mt-1'>
                             {normalizedFormTeam.map(form =>
-                                <span className={`text-sm font-normal px-1 ${form === 'V' ? 'bg-green-400' : form === 'D' ? 'bg-red-400' : 'bg-yellow-400'}`}>{form}</span>
+                                <span className={`text-sm font-normal px-1 ${form === 'V' ? 'bg-green-400' : form === 'D' ? 'bg-red-500' : 'bg-yellow-400'}`}>{form}</span>
                             )}
                         </div>
                     </div>
