@@ -18,15 +18,8 @@ const FullStandings = ({ standingsData, isLoading, error }: { standingsData: IRo
 
     return (
         <div>
-            {/* <div className='max-w-fit text-center m-auto bg-green-400 px-3 relative top-3'>
+            <div className='bg-gray-100' >
                 <div>
-                    <p className='text-xl font-normal italic text-white'>
-                        <span>Tabla de posiciones</span>
-                    </p>
-                </div>
-            </div> */}
-            <div className='bg-gray-100 ' >
-                <div className=''>
                     <table className="table-auto w-full">
                         <thead>
                             <tr className='bg-gray-300'>
@@ -94,12 +87,12 @@ const FullStandings = ({ standingsData, isLoading, error }: { standingsData: IRo
                     </table>
                 </div>
 
-                <div id="informationStandings" className="w-full  m-auto items-center px-4 py-3 text-sm bg-gray-300">
+                <div id="informationStandings" className="w-full m-auto items-center px-4 py-3 text-sm bg-gray-300">
                     <div className='font-medium uppercase italic text-gray-600'>
                         <div className={`border-l-green-500 border-l-4`}>
                             <span className='ml-2'>Siguiente ronda</span>
                         </div>
-                        <ul className="list-decimal list-inside mt-3">
+                        <ul className="list-decimal list-inside mt-3 font-extralight text-xs">
                             <li><span className='ml-2'>Diferencias de goles</span></li>
                             <li><span className='ml-2'>Goles marcados</span></li>
                             <li><span className='ml-2'>Goles marcados de visitante</span></li>

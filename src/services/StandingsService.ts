@@ -27,6 +27,22 @@ export class StandingsService extends ApiFootballService {
             console.error(`Error fetching standing by league Id: ${leagueId}:`, error);
             return undefined;
         }
-    } // end getNextMatch
+    } // end getFullStandingByLeagueId
+
+    /**
+     * Obtiene la información de la tabla de clasificación de una liga específica bajo el año actual
+     * @returns {Promise<IInfoMatchItem>} - Una promesa que se resuelve con la información del partido.
+     */
+    public async getFullStandingByTeamId(teamId: number): Promise<IStandingsResponse | undefined> {
+        try {
+            const endpoint = `standings?season=${this._currentYearSeason}&team=${teamId}`;
+            const data: any = await this.makeRequest(endpoint);
+
+            return data?.response?.[0] || undefined;
+        } catch (error) {
+            console.error(`Error fetching standing by team Id: ${teamId}:`, error);
+            return undefined;
+        }
+    } // end getFullStandingByTeamId
 
 }
