@@ -9,6 +9,7 @@ import LastMatch from "./pages/LastMatch";
 import FixtureTeam from "./pages/FixtureTeam";
 import MatchDetail from "./pages/MatchDetail";
 import bgApp from '../src/assets/bgApp.jpg';
+import Standings from './pages/Standings';
 
 const App = () => {
 
@@ -46,7 +47,7 @@ const App = () => {
           <Route path="/last-match" element={<LastMatch />} />
           <Route path="/fixture-team" element={<FixtureTeam />} />
           <Route path="/detail-match" element={<MatchDetail />} />
-          {/*  <Route path="/standings" element={<StandingsDetail />} /> */}
+          <Route path="/standings" element={<Standings />} />
         </Routes>
       </main>
 
