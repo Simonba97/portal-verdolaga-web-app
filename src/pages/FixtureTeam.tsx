@@ -37,7 +37,7 @@ const FixtureTeam = () => {
                 setLoading(true);
 
                 const [fixtureData, teamInformationData] = await Promise.all([
-                    fixtureService.getFixture(normalizedTeamId),
+                    fixtureService.getFixtureBetweenDateRanges('2024-07-30', '2024-12-31', normalizedTeamId),
                     teamsService.getTeamInformation(normalizedTeamId)
                 ]);
 

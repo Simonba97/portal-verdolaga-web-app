@@ -11,13 +11,27 @@ import { ApiFootballService } from "./core/ApiFootballService";
  */
 export class FixtureService extends ApiFootballService {
 
+    public async getFixtureBetweenDateRanges(dateFrom: string, dateTo: string, teamId: number): Promise<IFixtureResponse[] | undefined> {
+
+        try {
+            const endpoint = `fixtures?team=${teamId}&season=${new Date().getFullYear()}&from=${dateFrom}&to=${dateTo}`;
+            const data: any = await this.makeRequest(endpoint);
+
+            return data?.response || undefined;
+        } catch (error) {
+            console.error(`Error fetching fixture between date ranges from: ${dateFrom} to ${dateTo}`, error);
+            return undefined;
+        }
+
+    } // end getFixtureBetweenDateRanges
+
     /**
      * Obtiene la información del próximo partido de un equipo
      * @returns {Promise<IInfoMatchItem>} - Una promesa que se resuelve con la información del partido.
      */
     public async getNextMatch(teamId: number): Promise<IFixtureResponse | undefined> {
         try {
-            const endpoint = `fixtures?team=${teamId}&next=1`;
+            const endpoint = `fixtures?team=${teamId}&next=1&status=TBD-NS-LIVE`;
             const data: any = await this.makeRequest(endpoint);
 
             return data?.response?.[0] || undefined;
