@@ -16,7 +16,7 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
                     </p>
                 </div>
                 <div>
-                    <p className='text-lg font-normal text-white italic'>
+                    <p className='text-lg font-normal text-gray-100 italic'>
                         <span>{format(new Date(matchData.fixture.date), 'MMM', { locale: es })}</span>
                     </p>
                 </div>
@@ -25,7 +25,7 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
                 {/* BODY */}
                 <div className="space-y-[-6px] mb-1">
                     <p className='text-sm font-light not-italic'>
-                        <span>{`${matchData.league.name} - ${matchData.league.season}`}</span>
+                        <span>{`${matchData.league.name.toLowerCase() === Global.NAME_LEAGUE_COL_API_FOOTBALL.toLocaleLowerCase() ? Global.NAME_LEAGUE_COL_CUSTOM : matchData.league.name} - ${matchData.league.season}`}</span>
                     </p>
                     <p className='text-xs font-light not-italic'>
                         <span>{matchData.league.round}</span>
@@ -64,8 +64,8 @@ const SummaryMatchCard = ({ matchData }: { matchData: IFixtureResponse }) => {
 
                         {/* Match Time to be Defined */}
                         {matchData.fixture.status.short === TypesStatusFixturesShort.TimeToBeDefined &&
-                            <span className='text-xs font-light not-italic leading-[16px] bg-red-200 h-full'>
-                                {`Sin horario`}
+                            <span className='text-base font-light not-italic h-full'>
+                                {Global.DEFAULT_TIME_NOT_PROGRAMMED} {/* 9:00 Por defecto cuando no existe programación aún */}
                             </span>
 
                         }
