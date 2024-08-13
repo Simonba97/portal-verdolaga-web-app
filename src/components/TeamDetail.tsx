@@ -10,7 +10,7 @@ const TeamDetail = ({ teamData, formTeam }: { teamData: ITeamsInformationRespons
             <div className='w-[60%]'>
                 <div className='max-w-fit text-center m-auto bg-green-400 px-3 py-1 relative top-4'>
                     <div>
-                        <p className='text-lg font-normal text-white'>
+                        <p className='text-lg font-normal text-gray-100'>
                             <span>CALENDARIO</span>
                         </p>
                     </div>
@@ -18,7 +18,7 @@ const TeamDetail = ({ teamData, formTeam }: { teamData: ITeamsInformationRespons
                 <div className='bg-gray-100 flex flex-col text-center items-center'>
                     <div className='pt-1 mb-2 font-light z-10'>
                         <div id={`nameTeam-${teamData.team.id}`}>
-                            <span className='text-xl font-normal italic'>{teamData.team.name}</span>
+                            <span className='text-xl font-normal italic text-gray-800'>{teamData.team.name}</span>
                         </div>
                         <div id={`logoTeam-${teamData.team.id}`}>
                             <img src={teamData.team.logo} alt={teamData.team.name} className='w-14 m-auto' />

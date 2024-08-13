@@ -6,6 +6,7 @@ import MessageCard from './MessageCard';
 import { fadeInAnimation } from '../utils/animationConstants';
 import { Link } from 'react-router-dom';
 import { TypesStatusFixturesShort } from '../utils/TypesStatusFixtures';
+import { Global } from '../utils/Global';
 
 const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureResponse | undefined, isLoading: boolean, error: any }) => {
 
@@ -71,8 +72,8 @@ const FullMatchCard = ({ matchData, isLoading, error }: { matchData: IFixtureRes
                     {/* Match Time to be Defined */}
                     {matchData.fixture.status.short === TypesStatusFixturesShort.TimeToBeDefined &&
                         <div>
-                            <p className='text-2xl font-normal itali bg-red-200'>
-                                <span>{'Sin horario'}</span>
+                            <p className='text-2xl font-normal itali'>
+                                <span>{Global.DEFAULT_TIME_NOT_PROGRAMMED}</span> {/* 9:00 Por defecto cuando no existe programación aún */}
                             </p>
                         </div>
                     }
