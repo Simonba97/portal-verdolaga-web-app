@@ -8,12 +8,16 @@ import { TeamsService } from "../services/TeamsService";
 import { useLocation } from "react-router-dom";
 import { Global } from "../utils/Global";
 import { TypesStatusFixturesShort } from "../utils/TypesStatusFixtures";
+import { subWeeks, addMonths, format } from 'date-fns';
+import { useNextMatch } from "../contexts/NextMatchContext";
 
 let hasFetchedData: boolean = false;
 
 const FixtureTeam = () => {
 
     let componentResult = null;
+
+    const { nextMatch, requestLoading } = useNextMatch();
     const [FixtureTeamData, setFixtureTeamData] = useState<IFixtureResponse[] | undefined>(undefined);
     const [TeamInformationData, setTeamInformationData] = useState<ITeamsInformationResponse | undefined>(undefined);
     const [SummaryLastMatchs, setSummaryLastMatchs] = useState<string>('');
@@ -30,14 +34,22 @@ const FixtureTeam = () => {
     // Usar un valor predeterminado si teamId es falsy o undefined
     const normalizedTeamId: number = Number(teamId) || Global.NACIONAL_ID_API_FOOTBALL;
 
+    console.log(requestLoading);
+    debugger;
+
     // Resumen de los resultados de los ultimos cinco partidos
     useEffect(() => {
         const callAsync = async () => {
             try {
                 setLoading(true);
 
+                // Restar exactamente 2 semanas
+                const dateQueryFrom: string = format(subWeeks(new Date(), 2), 'yyyy-MM-dd');
+                // Agregamos seis meses
+                const dateQueryTo: string = format(addMonths(new Date(), 6), 'yyyy-MM-dd');
+
                 const [fixtureData, teamInformationData] = await Promise.all([
-                    fixtureService.getFixtureBetweenDateRanges('2024-07-30', '2024-12-31', normalizedTeamId),
+                    fixtureService.getFixtureBetweenDateRanges(dateQueryFrom, dateQueryTo, normalizedTeamId),
                     teamsService.getTeamInformation(normalizedTeamId)
                 ]);
 
@@ -81,11 +93,12 @@ const FixtureTeam = () => {
             }
         };
 
-        if (!hasFetchedData) {
+        if (!hasFetchedData && !requestLoading) {
+            debugger;
             hasFetchedData = !hasFetchedData;
             callAsync();
         }
-    }, []);
+    }, [requestLoading]);
 
     if (loading) {
         componentResult = <MessageCard titleMsj='Cargando información...' descMsj='Por favor espere...' isLoading={loading} />
@@ -99,7 +112,7 @@ const FixtureTeam = () => {
                 <div id="matchSummaryContainer" className="flex justify-center">
                     <div className="space-y-5 w-11/12 ml-8 sm:ml-0 sm:w-full ">
                         {FixtureTeamData &&
-                            FixtureTeamData.map((game) => <SummaryMatchCard key={`summaryMatchCardFixture-${game.fixture.id}`} matchData={game} />)
+                            FixtureTeamData.map((game) => <SummaryMatchCard key={`summaryMatchCardFixture-${game.fixture.id}`} matchData={game} isNextGame={game.fixture.id === nextMatch?.fixture.id} />)
                         }
                     </div>
                 </div>
