@@ -7,27 +7,28 @@ import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import { fadeInAnimation } from '../../utils/animationConstants';
 import { Global } from '../../utils/Global';
+import { useNextMatch } from '../../contexts/NextMatchContext';
 
 let hasFetchedData: boolean = false;
 
 const FooterNextGame = () => {
-    const [NextMatchData, setNextMatchData] = useState<IFixtureResponse | undefined>(undefined);
+    const { nextMatch, updateNextMatch, requestLoading, updateRequestLoading } = useNextMatch();
     const [error, setError] = useState<string | null>(null); // Estado para manejar errores
-    const [loading, setLoading] = useState(true); // Estado para indicar si la solicitud está en curso
+
+
 
     const fixtureService = new FixtureService();
 
     useEffect(() => {
         const callAsync = async () => {
             try {
-                setLoading(true);
                 const dataResponse: IFixtureResponse | undefined = await fixtureService.getNextMatch(Global.NACIONAL_ID_API_FOOTBALL);
-                setNextMatchData(dataResponse);
-                setLoading(false);
+                updateNextMatch(dataResponse);
+                updateRequestLoading(false);
                 hasFetchedData = !hasFetchedData;
             } catch (error: any) {
                 setError(error.message || 'Error desconocido');
-                setLoading(false);
+                updateRequestLoading(false);
             }
         };
 
@@ -37,8 +38,7 @@ const FooterNextGame = () => {
         }
     }, []);
 
-
-    if (loading) {
+    if (requestLoading) {
         return (
             <div className="w-full h-[85px] backdrop-blur-md flex items-center px-4 py-2 fixed bottom-0 left-0 font-semibold text-gray-200 uppercase">
                 <motion.div className='w-full text-base sm:text-3xl flex justify-center italic gap-1 drop-shadow-md' {...fadeInAnimation}>
@@ -52,7 +52,7 @@ const FooterNextGame = () => {
         );
     }
 
-    if (!NextMatchData || error) {
+    if (!nextMatch || error) {
         return (
             <div className="backdrop-blur-md w-full h-[85px] flex items-center px-4 py-2 fixed bottom-0 left-0 font-semibold text-gray-200 uppercase">
                 <motion.div className='w-full text-base sm:text-3xl flex justify-center italic gap-1 drop-shadow-md' {...fadeInAnimation}>
@@ -63,7 +63,7 @@ const FooterNextGame = () => {
     }
 
     //const targetDate = '2023-12-01T12:00:00';
-    const targetDate = format(new Date(NextMatchData.fixture.date), 'yyyy-MM-dd\'T\'HH:mm:ss');
+    const targetDate = format(new Date(nextMatch.fixture.date), 'yyyy-MM-dd\'T\'HH:mm:ss');
     return (
         <Link to="/next-match">
 
