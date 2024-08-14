@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
-import { Route, Routes, useLocation, } from 'react-router-dom';
-import ReactGA from 'react-ga';
+import { Route, Routes } from 'react-router-dom';
 import SideBar from "./components/common/SideBar";
 import FooterNextGame from "./components/common/FooterNextGame";
 import HeroSection from "./components/HeroSection";
@@ -12,19 +10,6 @@ import bgApp from '../src/assets/bgApp.jpg';
 import Standings from './pages/Standings';
 
 const App = () => {
-
-  // Inicializar Google Analytics
-  useEffect(() => {
-    ReactGA.initialize(import.meta.env.VITE_GOOGLEANALYTICS_KEY);
-  }, []);
-
-  // Obtener la ubicación actual
-  const location = useLocation();
-
-  // Enviar el evento de página vista a Google Analytics cuando cambie la ubicación
-  useEffect(() => {
-    ReactGA.pageview(location.pathname + location.search);
-  }, [location]);
 
   return (
     <div className='App'>
